@@ -1,0 +1,22 @@
+uuid: 6cdbda3e-7a1c-4c46-b58e-c94ff7e43f88
+langcode: en
+status: true
+dependencies:
+  module:
+    - system
+  theme:
+    - fpac_theme
+_core:
+  default_config_hash: erQSEZF2XUjNmgTl0uNRBzmg18ZGXwUcw2FhApoeuHk
+id: fpac_theme_content
+theme: fpac_theme
+region: content
+weight: -5
+provider: null
+plugin: system_main_block
+settings:
+  id: system_main_block
+  label: 'Main page content'
+  label_display: '0'
+  provider: system
+visibility: {  }

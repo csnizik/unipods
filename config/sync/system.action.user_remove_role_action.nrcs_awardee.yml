@@ -1,0 +1,14 @@
+uuid: e2650c69-a9d4-4eab-81ff-1ddf5c71dd7c
+langcode: en
+status: true
+dependencies:
+  config:
+    - user.role.nrcs_awardee
+  module:
+    - user
+id: user_remove_role_action.nrcs_awardee
+label: 'Remove the NRCS Awardee role from the selected user(s)'
+type: user
+plugin: user_remove_role_action
+configuration:
+  rid: nrcs_awardee

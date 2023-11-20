@@ -1,0 +1,24 @@
+uuid: 72f4f1ce-b11d-43fb-83bf-0d68ba3cf278
+langcode: en
+status: true
+dependencies:
+  config:
+    - block_content.type.html_block
+    - field.storage.block_content.field_raw_html
+    - filter.format.raw_html
+  module:
+    - text
+id: block_content.html_block.field_raw_html
+field_name: field_raw_html
+entity_type: block_content
+bundle: html_block
+label: HTML
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  allowed_formats:
+    - raw_html
+field_type: text_long

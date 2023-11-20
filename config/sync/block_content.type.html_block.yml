@@ -5,4 +5,4 @@ dependencies: {  }
 id: html_block
 label: 'HTML Block'
 revision: 0
-description: ''
+description: 'A block with full HTML fields.'

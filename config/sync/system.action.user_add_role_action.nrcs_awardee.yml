@@ -1,0 +1,14 @@
+uuid: 59c4819c-e22e-4fe7-988e-768657810148
+langcode: en
+status: true
+dependencies:
+  config:
+    - user.role.nrcs_awardee
+  module:
+    - user
+id: user_add_role_action.nrcs_awardee
+label: 'Add the NRCS Awardee role to the selected user(s)'
+type: user
+plugin: user_add_role_action
+configuration:
+  rid: nrcs_awardee

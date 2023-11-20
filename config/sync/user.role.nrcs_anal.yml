@@ -1,0 +1,9 @@
+uuid: 7f224ad0-5eff-474f-84db-170e39642170
+langcode: en
+status: true
+dependencies: {  }
+id: nrcs_anal
+label: 'NRCS Analyst'
+weight: 8
+is_admin: null
+permissions: {  }

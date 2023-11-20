@@ -1,0 +1,22 @@
+uuid: 9c9aa7da-70c9-4d3a-864e-f5bd07ee681c
+langcode: en
+status: false
+dependencies:
+  module:
+    - system
+  theme:
+    - fpac_theme
+_core:
+  default_config_hash: VhBzWb7lMRtIOg9G7VSw_0uopi-7zXeHq4vXqqV1HFE
+id: fpac_theme_breadcrumbs
+theme: fpac_theme
+region: breadcrumb
+weight: -7
+provider: null
+plugin: system_breadcrumb_block
+settings:
+  id: system_breadcrumb_block
+  label: Breadcrumbs
+  label_display: '0'
+  provider: system
+visibility: {  }

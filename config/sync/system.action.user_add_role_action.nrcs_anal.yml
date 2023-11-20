@@ -1,0 +1,14 @@
+uuid: 2f5d3572-009e-432b-aca9-73a1ccc38a25
+langcode: en
+status: true
+dependencies:
+  config:
+    - user.role.nrcs_anal
+  module:
+    - user
+id: user_add_role_action.nrcs_anal
+label: 'Add the NRCS Analyst role to the selected user(s)'
+type: user
+plugin: user_add_role_action
+configuration:
+  rid: nrcs_anal

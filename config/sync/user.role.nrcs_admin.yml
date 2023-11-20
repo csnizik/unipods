@@ -1,0 +1,27 @@
+uuid: 3a65a7a9-bdc8-4dfa-a2bd-eefcc1502b44
+langcode: en
+status: true
+dependencies:
+  config:
+    - node.type.award
+    - node.type.awardee_org
+    - node.type.contact
+  module:
+    - node
+id: nrcs_admin
+label: 'NRCS Administrator'
+weight: 6
+is_admin: null
+permissions:
+  - 'create award content'
+  - 'create awardee_org content'
+  - 'create contact content'
+  - 'delete own award content'
+  - 'delete own awardee_org content'
+  - 'delete own contact content'
+  - 'edit any award content'
+  - 'edit any awardee_org content'
+  - 'edit any contact content'
+  - 'edit own award content'
+  - 'edit own awardee_org content'
+  - 'edit own contact content'

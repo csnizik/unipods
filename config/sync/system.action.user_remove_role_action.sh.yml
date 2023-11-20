@@ -1,0 +1,14 @@
+uuid: 30d2047e-0ea9-47c4-8add-74b6d53c9fb7
+langcode: en
+status: true
+dependencies:
+  config:
+    - user.role.sh
+  module:
+    - user
+id: user_remove_role_action.sh
+label: 'Remove the SH role from the selected user(s)'
+type: user
+plugin: user_remove_role_action
+configuration:
+  rid: sh

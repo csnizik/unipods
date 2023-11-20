@@ -1,0 +1,14 @@
+uuid: 78d2911b-4b9d-42e0-9062-56b956fec4f1
+langcode: en
+status: true
+dependencies:
+  config:
+    - user.role.nrcs_anal
+  module:
+    - user
+id: user_remove_role_action.nrcs_anal
+label: 'Remove the NRCS Analyst role from the selected user(s)'
+type: user
+plugin: user_remove_role_action
+configuration:
+  rid: nrcs_anal
