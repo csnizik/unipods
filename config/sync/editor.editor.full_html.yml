@@ -93,6 +93,10 @@ settings:
       startIndex: true
     ckeditor5_sourceEditing:
       allowed_tags: {  }
+    ckeditor_link_styles_linkStyles:
+      styles: {  }
+    editor_advanced_link_link:
+      enabled_attributes: {  }
 image_upload:
   status: true
   scheme: public

@@ -1,0 +1,28 @@
+uuid: b7a71e86-0528-4eb3-aaf8-e7ddf26fb3b4
+langcode: en
+status: true
+dependencies:
+  module:
+    - field_permissions
+    - options
+    - user
+third_party_settings:
+  field_permissions:
+    permission_type: public
+id: user.field_contact_type
+field_name: field_contact_type
+entity_type: user
+type: list_string
+settings:
+  allowed_values:
+    -
+      value: a
+      label: a
+  allowed_values_function: ''
+module: options
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

@@ -1,0 +1,36 @@
+uuid: 19d6e4ba-33a9-4fca-bd80-30d0331a77e5
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_awardee_org
+    - node.type.awardee_org
+    - node.type.contact
+  module:
+    - entity_reference_validators
+third_party_settings:
+  entity_reference_validators:
+    circular_reference: false
+    circular_reference_deep: false
+    duplicate_reference: false
+id: node.contact.field_awardee_org
+field_name: field_awardee_org
+entity_type: node
+bundle: contact
+label: 'Awardee Organization'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:node'
+  handler_settings:
+    target_bundles:
+      awardee_org: awardee_org
+    sort:
+      field: _none
+      direction: ASC
+    auto_create: false
+    auto_create_bundle: award
+field_type: entity_reference

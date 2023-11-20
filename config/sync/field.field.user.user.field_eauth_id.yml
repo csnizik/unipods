@@ -1,0 +1,20 @@
+uuid: c86cab52-ec18-440c-90b3-a010208df21a
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.user.field_eauth_id
+  module:
+    - user
+id: user.user.field_eauth_id
+field_name: field_eauth_id
+entity_type: user
+bundle: user
+label: 'eAuth ID'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

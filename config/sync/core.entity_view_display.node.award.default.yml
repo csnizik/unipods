@@ -1,0 +1,37 @@
+uuid: 60abc890-afad-4570-8c43-d11d4ee14bf8
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.node.award.field_awardee_org
+    - field.field.node.award.field_contact
+    - node.type.award
+  module:
+    - user
+id: node.award.default
+targetEntityType: node
+bundle: award
+mode: default
+content:
+  field_awardee_org:
+    type: entity_reference_label
+    label: above
+    settings:
+      link: true
+    third_party_settings: {  }
+    weight: 101
+    region: content
+  field_contact:
+    type: entity_reference_label
+    label: above
+    settings:
+      link: true
+    third_party_settings: {  }
+    weight: 102
+    region: content
+  links:
+    settings: {  }
+    third_party_settings: {  }
+    weight: 100
+    region: content
+hidden: {  }

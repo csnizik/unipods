@@ -1,0 +1,55 @@
+uuid: 13693e50-d543-43b7-8852-cb44c47e2532
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.node.awardee_org.field_acronym
+    - field.field.node.awardee_org.field_invited_contact
+    - field.field.node.awardee_org.field_short_name
+    - field.field.node.awardee_org.field_state_territory
+    - node.type.awardee_org
+  module:
+    - options
+    - user
+id: node.awardee_org.default
+targetEntityType: node
+bundle: awardee_org
+mode: default
+content:
+  field_acronym:
+    type: string
+    label: above
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    weight: 101
+    region: content
+  field_invited_contact:
+    type: entity_reference_label
+    label: above
+    settings:
+      link: true
+    third_party_settings: {  }
+    weight: 102
+    region: content
+  field_short_name:
+    type: string
+    label: above
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    weight: 103
+    region: content
+  field_state_territory:
+    type: list_default
+    label: above
+    settings: {  }
+    third_party_settings: {  }
+    weight: 104
+    region: content
+  links:
+    settings: {  }
+    third_party_settings: {  }
+    weight: 100
+    region: content
+hidden: {  }

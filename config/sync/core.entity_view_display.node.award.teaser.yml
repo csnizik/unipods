@@ -1,0 +1,24 @@
+uuid: 04098375-31d1-458d-a626-0aae40277abb
+langcode: en
+status: true
+dependencies:
+  config:
+    - core.entity_view_mode.node.teaser
+    - field.field.node.award.field_awardee_org
+    - field.field.node.award.field_contact
+    - node.type.award
+  module:
+    - user
+id: node.award.teaser
+targetEntityType: node
+bundle: award
+mode: teaser
+content:
+  links:
+    settings: {  }
+    third_party_settings: {  }
+    weight: 100
+    region: content
+hidden:
+  field_awardee_org: true
+  field_contact: true

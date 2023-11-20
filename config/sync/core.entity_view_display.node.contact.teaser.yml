@@ -1,0 +1,28 @@
+uuid: 963ac69b-78fc-4cfa-892f-fa1a12d7442e
+langcode: en
+status: true
+dependencies:
+  config:
+    - core.entity_view_mode.node.teaser
+    - field.field.node.contact.field_active
+    - field.field.node.contact.field_admin_user
+    - field.field.node.contact.field_awardee_org
+    - field.field.node.contact.field_awardee_user
+    - node.type.contact
+  module:
+    - user
+id: node.contact.teaser
+targetEntityType: node
+bundle: contact
+mode: teaser
+content:
+  links:
+    settings: {  }
+    third_party_settings: {  }
+    weight: 100
+    region: content
+hidden:
+  field_active: true
+  field_admin_user: true
+  field_awardee_org: true
+  field_awardee_user: true

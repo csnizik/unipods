@@ -1,0 +1,57 @@
+uuid: 4401f0c6-c93d-46d1-8a46-e0a831aa59a0
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.node.contact.field_active
+    - field.field.node.contact.field_admin_user
+    - field.field.node.contact.field_awardee_org
+    - field.field.node.contact.field_awardee_user
+    - node.type.contact
+  module:
+    - user
+id: node.contact.default
+targetEntityType: node
+bundle: contact
+mode: default
+content:
+  field_active:
+    type: boolean
+    label: above
+    settings:
+      format: default
+      format_custom_false: ''
+      format_custom_true: ''
+    third_party_settings: {  }
+    weight: 101
+    region: content
+  field_admin_user:
+    type: entity_reference_label
+    label: above
+    settings:
+      link: true
+    third_party_settings: {  }
+    weight: 102
+    region: content
+  field_awardee_org:
+    type: entity_reference_label
+    label: above
+    settings:
+      link: true
+    third_party_settings: {  }
+    weight: 101
+    region: content
+  field_awardee_user:
+    type: entity_reference_label
+    label: above
+    settings:
+      link: true
+    third_party_settings: {  }
+    weight: 103
+    region: content
+  links:
+    settings: {  }
+    third_party_settings: {  }
+    weight: 100
+    region: content
+hidden: {  }

@@ -1,0 +1,36 @@
+uuid: 9231f1b9-7a80-4555-9798-45f04b2b3356
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_admin_user
+    - node.type.contact
+  module:
+    - entity_reference_validators
+third_party_settings:
+  entity_reference_validators:
+    circular_reference: false
+    circular_reference_deep: false
+    duplicate_reference: false
+id: node.contact.field_admin_user
+field_name: field_admin_user
+entity_type: node
+bundle: contact
+label: Admin
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:user'
+  handler_settings:
+    target_bundles: null
+    sort:
+      field: _none
+      direction: ASC
+    auto_create: false
+    filter:
+      type: _none
+    include_anonymous: true
+field_type: entity_reference

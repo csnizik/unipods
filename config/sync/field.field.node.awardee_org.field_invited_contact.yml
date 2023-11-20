@@ -1,0 +1,36 @@
+uuid: 34207185-bbf4-4922-bdd1-c986bdccccb4
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_invited_contact
+    - node.type.awardee_org
+    - node.type.contact
+  module:
+    - entity_reference_validators
+third_party_settings:
+  entity_reference_validators:
+    circular_reference: false
+    circular_reference_deep: false
+    duplicate_reference: false
+id: node.awardee_org.field_invited_contact
+field_name: field_invited_contact
+entity_type: node
+bundle: awardee_org
+label: Contact
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:node'
+  handler_settings:
+    target_bundles:
+      contact: contact
+    sort:
+      field: _none
+      direction: ASC
+    auto_create: false
+    auto_create_bundle: ''
+field_type: entity_reference

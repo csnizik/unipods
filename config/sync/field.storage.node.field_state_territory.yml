@@ -1,0 +1,24 @@
+uuid: ae1aeb17-0adb-42f6-9a38-9be0b4a8b45b
+langcode: en
+status: true
+dependencies:
+  module:
+    - node
+    - options
+id: node.field_state_territory
+field_name: field_state_territory
+entity_type: node
+type: list_string
+settings:
+  allowed_values:
+    -
+      value: AL
+      label: AL
+  allowed_values_function: ''
+module: options
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false
