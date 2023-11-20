@@ -5,7 +5,6 @@ dependencies:
   config:
     - field.field.node.contact.field_active
     - field.field.node.contact.field_admin_user
-    - field.field.node.contact.field_awardee_org
     - field.field.node.contact.field_awardee_user
     - field.field.node.contact.field_contact_role
     - field.field.node.contact.field_contact_type
@@ -35,14 +34,6 @@ content:
       link: true
     third_party_settings: {  }
     weight: 102
-    region: content
-  field_awardee_org:
-    type: entity_reference_label
-    label: above
-    settings:
-      link: true
-    third_party_settings: {  }
-    weight: 101
     region: content
   field_awardee_user:
     type: entity_reference_label

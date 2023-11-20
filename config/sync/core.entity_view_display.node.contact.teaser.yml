@@ -6,7 +6,6 @@ dependencies:
     - core.entity_view_mode.node.teaser
     - field.field.node.contact.field_active
     - field.field.node.contact.field_admin_user
-    - field.field.node.contact.field_awardee_org
     - field.field.node.contact.field_awardee_user
     - field.field.node.contact.field_contact_role
     - field.field.node.contact.field_contact_type
@@ -26,7 +25,6 @@ content:
 hidden:
   field_active: true
   field_admin_user: true
-  field_awardee_org: true
   field_awardee_user: true
   field_contact_role: true
   field_contact_type: true
