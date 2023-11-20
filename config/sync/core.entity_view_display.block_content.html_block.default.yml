@@ -18,19 +18,23 @@ third_party_settings:
       -
         layout_id: layout_onecol
         layout_settings:
-          label: ''
+          label: HTML
+          context_mapping: {  }
         components:
           380b69b1-1af2-493f-b036-559a425aaead:
             uuid: 380b69b1-1af2-493f-b036-559a425aaead
             region: content
             configuration:
               id: 'field_block:block_content:html_block:field_raw_html'
+              label: HTML
               label_display: '0'
+              provider: layout_builder
               context_mapping:
                 entity: layout_builder.entity
+                view_mode: view_mode
               formatter:
                 type: text_default
-                label: above
+                label: hidden
                 settings: {  }
                 third_party_settings: {  }
             weight: 1

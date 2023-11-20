@@ -1,0 +1,33 @@
+uuid: 25096394-3b47-4190-bbd3-329fe16ffabf
+langcode: en
+status: true
+dependencies:
+  config:
+    - block_content.type.ui_component
+    - field.field.block_content.ui_component.field_raw_html
+    - field.field.block_content.ui_component.layout_builder__layout
+  module:
+    - text
+id: block_content.ui_component.default
+targetEntityType: block_content
+bundle: ui_component
+mode: default
+content:
+  field_raw_html:
+    type: text_textarea
+    weight: 27
+    region: content
+    settings:
+      rows: 5
+      placeholder: ''
+    third_party_settings: {  }
+  info:
+    type: string_textfield
+    weight: -5
+    region: content
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+hidden:
+  layout_builder__layout: true

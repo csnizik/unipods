@@ -1,0 +1,24 @@
+uuid: 13148a16-8333-4168-b486-7ec8f565ccd9
+langcode: en
+status: true
+dependencies:
+  config:
+    - block_content.type.ui_component
+    - field.storage.block_content.field_raw_html
+    - filter.format.raw_html
+  module:
+    - text
+id: block_content.ui_component.field_raw_html
+field_name: field_raw_html
+entity_type: block_content
+bundle: ui_component
+label: HTML
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  allowed_formats:
+    - raw_html
+field_type: text_long

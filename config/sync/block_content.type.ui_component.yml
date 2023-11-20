@@ -1,0 +1,8 @@
+uuid: fa9eb0fa-aaf8-44b1-af7f-1485a05a86cd
+langcode: en
+status: true
+dependencies: {  }
+id: ui_component
+label: 'UI Component'
+revision: 0
+description: ''

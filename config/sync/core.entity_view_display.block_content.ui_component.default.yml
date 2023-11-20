@@ -1,0 +1,74 @@
+uuid: fbddeba5-aa9f-4f20-ab51-06f8048abd6e
+langcode: en
+status: true
+dependencies:
+  config:
+    - block_content.type.ui_component
+    - field.field.block_content.ui_component.field_raw_html
+    - field.field.block_content.ui_component.layout_builder__layout
+  module:
+    - layout_builder
+    - layout_discovery
+    - text
+  theme:
+    - fpac_theme
+third_party_settings:
+  layout_builder:
+    enabled: true
+    allow_custom: true
+    sections:
+      -
+        layout_id: pattern_blockquote
+        layout_settings:
+          label: ''
+          context_mapping: {  }
+          pattern:
+            field_templates: default
+            variant: default
+        components: {  }
+        third_party_settings: {  }
+      -
+        layout_id: pattern_blockquote
+        layout_settings:
+          label: ''
+          context_mapping: {  }
+          pattern:
+            field_templates: default
+            variant: default
+        components: {  }
+        third_party_settings: {  }
+      -
+        layout_id: layout_onecol
+        layout_settings:
+          label: ''
+        components:
+          ce05f800-3aa9-4261-912d-2ecd991f398b:
+            uuid: ce05f800-3aa9-4261-912d-2ecd991f398b
+            region: content
+            configuration:
+              id: 'field_block:block_content:ui_component:field_raw_html'
+              label_display: '0'
+              context_mapping:
+                entity: layout_builder.entity
+              formatter:
+                type: text_default
+                label: hidden
+                settings: {  }
+                third_party_settings: {  }
+            weight: 0
+            additional: {  }
+        third_party_settings: {  }
+id: block_content.ui_component.default
+targetEntityType: block_content
+bundle: ui_component
+mode: default
+content:
+  field_raw_html:
+    type: text_default
+    label: hidden
+    settings: {  }
+    third_party_settings: {  }
+    weight: 0
+    region: content
+hidden:
+  layout_builder__layout: true
