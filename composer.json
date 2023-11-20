@@ -47,6 +47,7 @@
     "drupal/pathauto": "^1.12",
     "drupal/redirect": "^1.9",
     "drupal/simple_user_management": "^1.5",
+    "drupal/ui_patterns": "^1.7",
     "drupal/yearonly": "^9.1",
     "drush/drush": "^12.4"
   },
