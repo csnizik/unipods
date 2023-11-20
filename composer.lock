@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "7a8f21241b2c66b7b05e05c352cbd0d7",
+    "content-hash": "df88174025e6ad68bd04d543f6e3647b",
     "packages": [
         {
             "name": "asm89/stack-cors",
@@ -1773,6 +1773,68 @@
             "support": {
                 "source": "https://cgit.drupalcode.org/ckeditor_link_styles",
                 "issues": "https://www.drupal.org/project/issues/ckeditor_link_styles"
+            }
+        },
+        {
+            "name": "drupal/component_blocks",
+            "version": "1.2.4",
+            "source": {
+                "type": "git",
+                "url": "https://git.drupalcode.org/project/component_blocks.git",
+                "reference": "1.2.4"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://ftp.drupal.org/files/projects/component_blocks-1.2.4.zip",
+                "reference": "1.2.4",
+                "shasum": "b97b04ebdb5d00feec84f9275d38ef53bd5823c7"
+            },
+            "require": {
+                "drupal/core": "^9.0 || ^10.0",
+                "drupal/ui_patterns": "*"
+            },
+            "require-dev": {
+                "drupal/components": "*",
+                "drupal/ui_patterns_library": "*",
+                "drupal/ui_patterns_settings": "*"
+            },
+            "type": "drupal-module",
+            "extra": {
+                "drupal": {
+                    "version": "1.2.4",
+                    "datestamp": "1688454784",
+                    "security-coverage": {
+                        "status": "covered",
+                        "message": "Covered by Drupal's security advisory policy"
+                    }
+                }
+            },
+            "notification-url": "https://packages.drupal.org/8/downloads",
+            "license": [
+                "GPL-2.0-or-later"
+            ],
+            "authors": [
+                {
+                    "name": "amjad1233",
+                    "homepage": "https://www.drupal.org/user/291693"
+                },
+                {
+                    "name": "Eric115",
+                    "homepage": "https://www.drupal.org/user/2877061"
+                },
+                {
+                    "name": "larowlan",
+                    "homepage": "https://www.drupal.org/user/395439"
+                },
+                {
+                    "name": "mstrelan",
+                    "homepage": "https://www.drupal.org/user/314289"
+                }
+            ],
+            "description": "Provides the ability to wire up specially shaped blocks from theme components",
+            "homepage": "https://www.drupal.org/project/component_blocks",
+            "support": {
+                "source": "https://git.drupalcode.org/project/component_blocks"
             }
         },
         {

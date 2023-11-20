@@ -19,6 +19,7 @@
     "drupal/address": "^1.12",
     "drupal/admin_toolbar": "^3.4",
     "drupal/ckeditor_link_styles": "^1.0",
+    "drupal/component_blocks": "^1.2",
     "drupal/consumers": "^1.17",
     "drupal/core-composer-scaffold": "^10.1",
     "drupal/core-project-message": "^10.1",
