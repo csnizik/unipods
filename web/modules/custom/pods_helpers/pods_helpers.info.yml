@@ -1,0 +1,6 @@
+name: PODS Helpers
+type: module
+description: 'Provides functionality for PODS.'
+package: Custom
+core_version_requirement:  ^10
+
