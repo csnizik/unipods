@@ -3,6 +3,7 @@ langcode: en
 status: true
 dependencies:
   config:
+    - field.field.user.user.field_awardee_org
     - field.field.user.user.field_contact_type
     - field.field.user.user.field_eauth_id
     - field.field.user.user.field_name
@@ -20,6 +21,14 @@ targetEntityType: user
 bundle: user
 mode: default
 content:
+  field_awardee_org:
+    type: entity_reference_label
+    label: above
+    settings:
+      link: true
+    third_party_settings: {  }
+    weight: 9
+    region: content
   field_contact_type:
     type: list_default
     label: above

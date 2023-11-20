@@ -8,6 +8,7 @@ dependencies:
     - field.field.node.contact.field_admin_user
     - field.field.node.contact.field_awardee_org
     - field.field.node.contact.field_awardee_user
+    - field.field.node.contact.field_contact_type
     - node.type.contact
   module:
     - user
@@ -26,3 +27,4 @@ hidden:
   field_admin_user: true
   field_awardee_org: true
   field_awardee_user: true
+  field_contact_type: true

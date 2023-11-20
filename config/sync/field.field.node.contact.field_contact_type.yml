@@ -1,0 +1,21 @@
+uuid: aa833a42-357d-4b25-b018-8fecbb69ac3d
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_contact_type
+    - node.type.contact
+  module:
+    - options
+id: node.contact.field_contact_type
+field_name: field_contact_type
+entity_type: node
+bundle: contact
+label: 'Contact Type'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: list_string
