@@ -1,96 +1,125 @@
 {
-    "name": "drupal/recommended-project",
-    "description": "Project template for Drupal projects with a relocated document root",
-    "type": "project",
-    "license": "GPL-2.0-or-later",
-    "homepage": "https://www.drupal.org/project/drupal",
-    "support": {
-        "docs": "https://www.drupal.org/docs/user_guide/en/index.html",
-        "chat": "https://www.drupal.org/node/314178"
-    },
-    "repositories": [
-        {
-            "type": "composer",
-            "url": "https://packages.drupal.org/8"
-        }
-    ],
-    "require": {
-        "composer/installers": "^2.0",
-        "drupal/core-composer-scaffold": "^10.1",
-        "drupal/core-project-message": "^10.1",
-        "drupal/core-recommended": "^10.1",
-        "drush/drush": "^12.4"
-    },
-    "conflict": {
-        "drupal/drupal": "*"
-    },
-    "minimum-stability": "stable",
-    "prefer-stable": true,
-    "config": {
-        "allow-plugins": {
-            "composer/installers": true,
-            "drupal/core-composer-scaffold": true,
-            "drupal/core-project-message": true,
-            "phpstan/extension-installer": true,
-            "dealerdirect/phpcodesniffer-composer-installer": true
-        },
-        "sort-packages": true
-    },
-    "extra": {
-        "drupal-scaffold": {
-            "locations": {
-                "web-root": "web/"
-            }
-        },
-        "installer-paths": {
-            "web/core": [
-                "type:drupal-core"
-            ],
-            "web/libraries/{$name}": [
-                "type:drupal-library"
-            ],
-            "web/modules/contrib/{$name}": [
-                "type:drupal-module"
-            ],
-            "web/profiles/contrib/{$name}": [
-                "type:drupal-profile"
-            ],
-            "web/themes/contrib/{$name}": [
-                "type:drupal-theme"
-            ],
-            "drush/Commands/contrib/{$name}": [
-                "type:drupal-drush"
-            ],
-            "web/modules/custom/{$name}": [
-                "type:drupal-custom-module"
-            ],
-            "web/profiles/custom/{$name}": [
-                "type:drupal-custom-profile"
-            ],
-            "web/themes/custom/{$name}": [
-                "type:drupal-custom-theme"
-            ]
-        },
-        "drupal-core-project-message": {
-            "include-keys": [
-                "homepage",
-                "support"
-            ],
-            "post-create-project-cmd-message": [
-                "<bg=blue;fg=white>                                                         </>",
-                "<bg=blue;fg=white>  Congratulations, you’ve installed the Drupal codebase  </>",
-                "<bg=blue;fg=white>  from the drupal/recommended-project template!          </>",
-                "<bg=blue;fg=white>                                                         </>",
-                "",
-                "<bg=yellow;fg=black>Next steps</>:",
-                "  * Install the site: https://www.drupal.org/docs/installing-drupal",
-                "  * Read the user guide: https://www.drupal.org/docs/user_guide/en/index.html",
-                "  * Get support: https://www.drupal.org/support",
-                "  * Get involved with the Drupal community:",
-                "      https://www.drupal.org/getting-involved",
-                "  * Remove the plugin that prints this message:",
-                "      composer remove drupal/core-project-message"
-            ]
-        }
+  "name": "drupal/recommended-project",
+  "description": "Project template for Drupal projects with a relocated document root",
+  "type": "project",
+  "license": "GPL-2.0-or-later",
+  "homepage": "https://www.drupal.org/project/drupal",
+  "support": {
+    "docs": "https://www.drupal.org/docs/user_guide/en/index.html",
+    "chat": "https://www.drupal.org/node/314178"
+  },
+  "repositories": [
+    {
+      "type": "composer",
+      "url": "https://packages.drupal.org/8"
     }
+  ],
+  "require": {
+    "composer/installers": "^2.0",
+    "drupal/address": "^1.12",
+    "drupal/admin_toolbar": "^3.4",
+    "drupal/ckeditor_link_styles": "^1.0",
+    "drupal/consumers": "^1.17",
+    "drupal/core-composer-scaffold": "^10.1",
+    "drupal/core-project-message": "^10.1",
+    "drupal/core-recommended": "^10.1",
+    "drupal/create_user_permission": "^2.0",
+    "drupal/csv_importer": "^1.16",
+    "drupal/csv_serialization": "^4.0",
+    "drupal/date_popup": "^2.0",
+    "drupal/date_range_formatter": "^4.0",
+    "drupal/devel": "^5.1",
+    "drupal/editor_advanced_link": "^2.2",
+    "drupal/email_registration": "^2.0@RC",
+    "drupal/entity_reference_validators": "^1.0@beta",
+    "drupal/erd": "^2.0@alpha",
+    "drupal/field_group": "^3.4",
+    "drupal/field_permissions": "^1.2",
+    "drupal/flexible_permissions": "^1.1",
+    "drupal/fraction": "^2.3",
+    "drupal/geofield": "^1.56",
+    "drupal/group": "^3.2",
+    "drupal/ief_table_view_mode": "^2.3",
+    "drupal/inline_entity_form": "^1.0@RC",
+    "drupal/msqrole": "^1.0",
+    "drupal/name": "^1.0@RC",
+    "drupal/openid_connect": "^1.4",
+    "drupal/pathauto": "^1.12",
+    "drupal/redirect": "^1.9",
+    "drupal/simple_user_management": "^1.5",
+    "drupal/yearonly": "^9.1",
+    "drush/drush": "^12.4"
+  },
+  "conflict": {
+    "drupal/drupal": "*"
+  },
+  "minimum-stability": "stable",
+  "prefer-stable": true,
+  "config": {
+    "allow-plugins": {
+      "composer/installers": true,
+      "drupal/core-composer-scaffold": true,
+      "drupal/core-project-message": true,
+      "phpstan/extension-installer": true,
+      "dealerdirect/phpcodesniffer-composer-installer": true
+    },
+    "sort-packages": true
+  },
+  "extra": {
+    "drupal-scaffold": {
+      "locations": {
+        "web-root": "web/"
+      }
+    },
+    "installer-paths": {
+      "web/core": [
+        "type:drupal-core"
+      ],
+      "web/libraries/{$name}": [
+        "type:drupal-library"
+      ],
+      "web/modules/contrib/{$name}": [
+        "type:drupal-module"
+      ],
+      "web/profiles/contrib/{$name}": [
+        "type:drupal-profile"
+      ],
+      "web/themes/contrib/{$name}": [
+        "type:drupal-theme"
+      ],
+      "drush/Commands/contrib/{$name}": [
+        "type:drupal-drush"
+      ],
+      "web/modules/custom/{$name}": [
+        "type:drupal-custom-module"
+      ],
+      "web/profiles/custom/{$name}": [
+        "type:drupal-custom-profile"
+      ],
+      "web/themes/custom/{$name}": [
+        "type:drupal-custom-theme"
+      ]
+    },
+    "drupal-core-project-message": {
+      "include-keys": [
+        "homepage",
+        "support"
+      ],
+      "post-create-project-cmd-message": [
+        "<bg=blue;fg=white>                                                         </>",
+        "<bg=blue;fg=white>  Congratulations, you’ve installed the Drupal codebase  </>",
+        "<bg=blue;fg=white>  from the drupal/recommended-project template!          </>",
+        "<bg=blue;fg=white>                                                         </>",
+        "",
+        "<bg=yellow;fg=black>Next steps</>:",
+        "  * Install the site: https://www.drupal.org/docs/installing-drupal",
+        "  * Read the user guide: https://www.drupal.org/docs/user_guide/en/index.html",
+        "  * Get support: https://www.drupal.org/support",
+        "  * Get involved with the Drupal community:",
+        "      https://www.drupal.org/getting-involved",
+        "  * Remove the plugin that prints this message:",
+        "      composer remove drupal/core-project-message"
+      ]
+    }
+  }
 }

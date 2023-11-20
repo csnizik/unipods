@@ -1,0 +1,33 @@
+{#
+/**
+ * @file
+ * Theme override for an 'input' #type form element.
+ *
+ * Available variables:
+ * - attributes: A list of HTML attributes for the input element.
+ * - children: Optional additional rendered elements.
+ *
+ * @see template_preprocess_input()
+ */
+#}
+{% set fsaClass = '' %}
+
+{% if attributes.type == 'button' %}
+	{% set fsaClass = 'fsa-btn' %}
+{% elseif attributes.type == 'checkbox' %}
+  {% set fsaClass = 'fsa-checkbox' %}
+{# {% elseif attributes.type == 'date' %}
+  {% set fsaClass = 'fsa-input fsa-field__item' %} #}
+{% elseif attributes.type == 'reset' %}
+	{% set fsaClass = 'fsa-btn fsa-btn--tertiary' %}
+{% elseif attributes.type == 'search' %}
+	{% set fsaClass = 'fsa-input fsa-search__input' %}
+{% elseif attributes.type == 'submit' %}
+	{% set fsaClass = 'fsa-btn fsa-btn--primary' %}
+{% elseif attributes.type == 'radio' %}
+	{% set fsaClass = 'fsa-radio' %}
+{% else %}
+  {% set fsaClass = 'fsa-input' %}
+{% endif %}
+
+<input{{ attributes.addClass(fsaClass) }} />{{ children }}

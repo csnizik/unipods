@@ -1,0 +1,43 @@
+{#
+/**
+ * @file
+ * Theme override for a 'form' element.
+ *
+ * Available variables
+ * - attributes: A list of HTML attributes for the wrapper element.
+ * - children: The child elements of the form.
+ *
+ * @see template_preprocess_form()
+ */
+#}
+<div class="fsa-box fsa-box--br-2">
+	{# <div class="fsa-stepped-tabs">
+		<div class="fsa-stepped-tabs__bd">
+			<ol class="fsa-stepped-tabs__list">
+				<li class="fsa-stepped-tabs__item">
+					<span class="fsa-stepped-tabs__label fsa-stepped-tabs__label--complete">
+						<span class="fsa-stepped-tabs__text">Add Awardee</span>
+					</span>
+				</li>
+				<li class="fsa-stepped-tabs__item">
+					<span class="fsa-stepped-tabs__label fsa-stepped-tabs__label--complete">
+						<span class="fsa-stepped-tabs__text">Add Award</span>
+					</span>
+				</li>
+				<li class="fsa-stepped-tabs__item">
+					<span aria-current="step" class="fsa-stepped-tabs__label fsa-stepped-tabs__label--active">
+						<span class="fsa-stepped-tabs__text">Add Project</span>
+					</span>
+				</li>
+			</ol>
+		</div>
+	</div> #}
+
+
+	<form{{attributes}}>
+
+		<h2>Project Information</h2>
+
+		{{ children }}
+	</form>
+</div>

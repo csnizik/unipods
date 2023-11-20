@@ -1,0 +1,57 @@
+<?php
+
+/**
+ * @file
+ * Functions to support theming.
+ */
+
+/**
+ * Implements hook_preprocess_image_widget().
+ */
+function fpac_theme_preprocess_image_widget(array &$variables) {
+  $data = &$variables['data'];
+
+  // This prevents image widget templates from rendering preview container HTML
+  // to users that do not have permission to access these previews.
+  // @todo revisit in https://drupal.org/node/953034
+  // @todo revisit in https://drupal.org/node/3114318
+  if (isset($data['preview']['#access']) && $data['preview']['#access'] === FALSE) {
+    unset($data['preview']);
+  }
+}
+
+/**
+ * Implements hook_preprocess_HOOK() for select.html.twig.
+ */
+function fpac_theme_preprocess_input(&$variables) {
+  if (isset($variables['attributes']['type']) && $variables['attributes']['type'] == 'text') {
+    // Add a class to the text input element.
+    $variables['attributes']['class'][] = 'fsa-input fsa-field__item';
+  }
+
+  // Check if 'type' is set to 'submit' and then add classes based on the 'value'.
+  if (isset($variables['attributes']['type']) && $variables['attributes']['type'] == 'submit') {
+    if (isset($variables['attributes']['value'])) {
+      if ($variables['attributes']['value'] == 'Save') {
+        $variables['attributes']['class'][] = 'fsa-btn';
+      }
+      elseif ($variables['attributes']['value'] == 'Preview') {
+        $variables['attributes']['class'][] = 'fsa-btn fsa-btn--secondary';
+      }
+    }
+  }
+}
+
+/**
+ * Implements hook_theme_suggestions_form_alter().
+ */
+function fpac_theme_theme_suggestions_form_alter(array &$suggestions, array $variables) {
+  $form_id = $variables['element']['#id'];
+  if ($form_id == 'node-awardee-org-form') {
+    $suggestions[] = 'form__node_awardee_org';
+  } else if ($form_id == 'node-award-form') {
+    $suggestions[] = 'form__node_award';
+  } else if ($form_id == 'node-project-form') {
+    $suggestions[] = 'form__node_project';
+  }
+}
