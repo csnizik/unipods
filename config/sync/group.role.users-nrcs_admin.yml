@@ -1,0 +1,16 @@
+uuid: 5df6825b-aeac-4bbe-827b-7a5304c0d674
+langcode: en
+status: true
+dependencies:
+  config:
+    - group.type.users
+id: users-nrcs_admin
+label: 'NRCS Admin'
+weight: 106
+admin: false
+scope: individual
+global_role: null
+group_type: users
+permissions:
+  - 'view group'
+  - 'view group_membership relationship'

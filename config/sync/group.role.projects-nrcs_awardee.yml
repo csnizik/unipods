@@ -1,0 +1,16 @@
+uuid: 1089fe90-3ff0-4f09-933e-96deecbd595c
+langcode: en
+status: true
+dependencies:
+  config:
+    - group.type.projects
+id: projects-nrcs_awardee
+label: 'NRCS Awardee'
+weight: 104
+admin: false
+scope: individual
+global_role: null
+group_type: projects
+permissions:
+  - 'view group'
+  - 'view group_membership relationship'

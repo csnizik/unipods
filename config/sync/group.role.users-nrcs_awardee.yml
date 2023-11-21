@@ -1,0 +1,14 @@
+uuid: 9e4f9a87-ea51-49bb-8b3e-48c8610c4998
+langcode: en
+status: true
+dependencies:
+  config:
+    - group.type.users
+id: users-nrcs_awardee
+label: 'NRCS Awardee'
+weight: 105
+admin: false
+scope: individual
+global_role: null
+group_type: users
+permissions: {  }

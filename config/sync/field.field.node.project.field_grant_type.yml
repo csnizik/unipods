@@ -1,0 +1,21 @@
+uuid: b5b28502-7f7f-45cd-becb-e0cde3110e7a
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_grant_type
+    - node.type.project
+  module:
+    - options
+id: node.project.field_grant_type
+field_name: field_grant_type
+entity_type: node
+bundle: project
+label: 'Grant Type'
+description: ''
+required: true
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: list_string

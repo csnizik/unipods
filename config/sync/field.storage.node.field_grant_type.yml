@@ -1,0 +1,28 @@
+uuid: 17a4679a-aad9-463a-a6c4-205125931b7d
+langcode: en
+status: true
+dependencies:
+  module:
+    - field_permissions
+    - node
+    - options
+third_party_settings:
+  field_permissions:
+    permission_type: public
+id: node.field_grant_type
+field_name: field_grant_type
+entity_type: node
+type: list_string
+settings:
+  allowed_values:
+    -
+      value: OFSHDT
+      label: OFSHDT
+  allowed_values_function: ''
+module: options
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

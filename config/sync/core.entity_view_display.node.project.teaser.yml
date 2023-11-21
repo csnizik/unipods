@@ -1,0 +1,30 @@
+uuid: 820078e4-0c41-4258-a0b2-b9bc9ad165f7
+langcode: en
+status: true
+dependencies:
+  config:
+    - core.entity_view_mode.node.teaser
+    - field.field.node.project.field_award
+    - field.field.node.project.field_funding_amount
+    - field.field.node.project.field_grant_type
+    - field.field.node.project.field_resource_concerns
+    - field.field.node.project.field_summary
+    - node.type.project
+  module:
+    - user
+id: node.project.teaser
+targetEntityType: node
+bundle: project
+mode: teaser
+content:
+  links:
+    settings: {  }
+    third_party_settings: {  }
+    weight: 100
+    region: content
+hidden:
+  field_award: true
+  field_funding_amount: true
+  field_grant_type: true
+  field_resource_concerns: true
+  field_summary: true

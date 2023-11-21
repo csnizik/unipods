@@ -1,0 +1,8 @@
+uuid: e735d285-42b2-46ac-a226-822f060c3d3b
+langcode: en
+status: true
+dependencies: {  }
+name: 'Resource Concerns'
+vid: resource_concerns
+description: ''
+weight: 0

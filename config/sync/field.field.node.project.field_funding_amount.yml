@@ -1,0 +1,23 @@
+uuid: afef806a-48ea-40cf-926f-90ec3eb67b5e
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_funding_amount
+    - node.type.project
+id: node.project.field_funding_amount
+field_name: field_funding_amount
+entity_type: node
+bundle: project
+label: 'Funding Amount'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  min: null
+  max: null
+  prefix: $
+  suffix: ''
+field_type: integer
