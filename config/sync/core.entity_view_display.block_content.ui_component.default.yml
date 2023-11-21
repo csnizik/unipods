@@ -1,4 +1,4 @@
-uuid: fbddeba5-aa9f-4f20-ab51-06f8048abd6e
+uuid: 1186f98a-3111-487b-b601-2f0358b2336f
 langcode: en
 status: true
 dependencies:
@@ -10,40 +10,18 @@ dependencies:
     - layout_builder
     - layout_discovery
     - text
-  theme:
-    - fpac_theme
 third_party_settings:
   layout_builder:
     enabled: true
     allow_custom: true
     sections:
       -
-        layout_id: pattern_blockquote
-        layout_settings:
-          label: ''
-          context_mapping: {  }
-          pattern:
-            field_templates: default
-            variant: default
-        components: {  }
-        third_party_settings: {  }
-      -
-        layout_id: pattern_blockquote
-        layout_settings:
-          label: ''
-          context_mapping: {  }
-          pattern:
-            field_templates: default
-            variant: default
-        components: {  }
-        third_party_settings: {  }
-      -
         layout_id: layout_onecol
         layout_settings:
           label: ''
         components:
-          ce05f800-3aa9-4261-912d-2ecd991f398b:
-            uuid: ce05f800-3aa9-4261-912d-2ecd991f398b
+          abec4de3-cb2a-499f-96c9-cd9b2be7c40c:
+            uuid: abec4de3-cb2a-499f-96c9-cd9b2be7c40c
             region: content
             configuration:
               id: 'field_block:block_content:ui_component:field_raw_html'
