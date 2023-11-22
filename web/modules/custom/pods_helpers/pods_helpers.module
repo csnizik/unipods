@@ -1,3 +1,23 @@
 <?php
 
+use Drupal\user\UserInterface;
+use Drupal\Core\Entity\EntityTypeManagerInterface;
+/**
+ * Implements hook_user_login.
+ */
+function pods_helpers_user_login(UserInterface $account) {
+  $awaitingLogin = $account->get('field_awaiting_login')->value;
+  if ($awaitingLogin) {
+    $userEmail = $account->getEmail();
+    $contact = \Drupal::entityTypeManager()->getStorage('node')->loadByProperties(['type' => 'contact', 'field_invite_email' => $userEmail]);
+    if (empty($contacts)) {
+      Drupal::logger('pods_helpers')->alert('There was no matching contact for %user.', ['%user' => $userEmail]);
+      return;
+    }
+    $contactNode = reset($contact);
+    $role = $contactNode->get('field_contact_role')->value;
 
+    Drupal::logger('pods_helpers')->info('user logged in, needs role: %user', ['%user'=>$role]);
+  }
+
+}
