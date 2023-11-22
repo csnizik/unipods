@@ -1,6 +1,6 @@
 services:
   pods_helpers.event_subscriber:
-    class: Drupal\pods_helpers\EventSubscriber\PodsHelpersSubscriber
-    arguments: ['@current_user']
+    class: Drupal\pods_helpers\EventSubscriber\CreateUserContact
+    arguments: ['@config.factory','@current_user','@user.data']
     tags:
-      - { name: event_subscriber }
+      - { name: 'event_subscriber' }
