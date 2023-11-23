@@ -1,23 +1,54 @@
 <?php
 
+/**
+ * @file
+ */
+
 use Drupal\user\UserInterface;
-use Drupal\Core\Entity\EntityTypeManagerInterface;
+use Drupal\user\Entity\User;
+
 /**
  * Implements hook_user_login.
  */
 function pods_helpers_user_login(UserInterface $account) {
-  $awaitingLogin = $account->get('field_awaiting_login')->value;
-  if ($awaitingLogin) {
-    $userEmail = $account->getEmail();
-    $contact = \Drupal::entityTypeManager()->getStorage('node')->loadByProperties(['type' => 'contact', 'field_invite_email' => $userEmail]);
-    if (empty($contacts)) {
-      Drupal::logger('pods_helpers')->alert('There was no matching contact for %user.', ['%user' => $userEmail]);
-      return;
-    }
-    $contactNode = reset($contact);
-    $role = $contactNode->get('field_contact_role')->value;
-
-    Drupal::logger('pods_helpers')->info('user logged in, needs role: %user', ['%user'=>$role]);
+  $currentRoles = $account->getRoles();
+  if (!empty($currentRoles)) {
+    return;
+  }
+  $userEmail = $account->getEmail();
+  $user = User::load($account->id());
+  // @todo handle missing values on received token
+  // if (check for missing eauthID and any other values from token) {
+  //   logout user and log message;
+  // }
+  // $user->set('field_eauth_id', 'TESTING')->save();
+  // and set other values on user entity.
+  $contacts = \Drupal::entityTypeManager()->getStorage('node')->loadByProperties(['type' => 'contact', 'title' => $userEmail]);
+  if (empty($contacts)) {
+    Drupal::logger('pods_helpers')->info('user not found: %user', ['%user' => $userEmail]);
+    // @todo add a forced logout here
+  }
+  elseif (count($contacts) > 1) {
+    Drupal::logger('pods_helpers')->info('more than one contact found');
+    // This should not happen once the entity create hook is finished.
+    return;
   }
 
+  // @todo unset all roles first so that the only roles the user has are the ones we are setting here
+  // We don't want an array.
+  $contact = reset($contacts);
+  if ($contact->get('field_contact_role') !== NULL) {
+    $assignedRole = $contact->get('field_contact_role')->value;
+  }
+  if ($contact->get('field_contact_type') !== NULL) {
+    $assignedType = $contact->get('field_contact_type')->value;
+  }
+
+  if (isset($assignedRole)) {
+    $user->addRole($assignedRole);
+  }
+  if (isset($assignedType)) {
+    $user->addRole($assignedType);
+  }
+  $user->save();
 }
