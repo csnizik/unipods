@@ -9,6 +9,7 @@ dependencies:
     - field.field.node.contact.field_awardee_user
     - field.field.node.contact.field_contact_role
     - field.field.node.contact.field_contact_type
+    - field.field.node.contact.field_invite_email
     - node.type.contact
   module:
     - user
@@ -28,3 +29,4 @@ hidden:
   field_awardee_user: true
   field_contact_role: true
   field_contact_type: true
+  field_invite_email: true

@@ -7,6 +7,7 @@ dependencies:
     - node.type.awardee_org
     - node.type.contact
   module:
+    - create_user_permission
     - node
 id: nrcs_admin
 label: 'NRCS Administrator'
@@ -16,6 +17,7 @@ permissions:
   - 'create award content'
   - 'create awardee_org content'
   - 'create contact content'
+  - 'create users'
   - 'delete own award content'
   - 'delete own awardee_org content'
   - 'delete own contact content'

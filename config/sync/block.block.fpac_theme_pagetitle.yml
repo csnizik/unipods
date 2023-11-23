@@ -1,0 +1,18 @@
+uuid: bae3ea25-6db0-4192-b95a-d231787d2974
+langcode: en
+status: true
+dependencies:
+  theme:
+    - fpac_theme
+id: fpac_theme_pagetitle
+theme: fpac_theme
+region: content
+weight: -5
+provider: null
+plugin: page_title_block
+settings:
+  id: page_title_block
+  label: 'Page title'
+  label_display: '0'
+  provider: core
+visibility: {  }

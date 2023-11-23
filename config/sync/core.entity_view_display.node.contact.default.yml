@@ -8,6 +8,7 @@ dependencies:
     - field.field.node.contact.field_awardee_user
     - field.field.node.contact.field_contact_role
     - field.field.node.contact.field_contact_type
+    - field.field.node.contact.field_invite_email
     - node.type.contact
   module:
     - options
@@ -56,6 +57,14 @@ content:
     settings: {  }
     third_party_settings: {  }
     weight: 104
+    region: content
+  field_invite_email:
+    type: string
+    label: above
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    weight: 106
     region: content
   links:
     settings: {  }

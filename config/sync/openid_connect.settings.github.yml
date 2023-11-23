@@ -1,6 +1,7 @@
 _core:
   default_config_hash: h0ctmI-lSknN6e9qvO8PKjAPEeopeDR4FnxTYhGcD1k
-enabled: false
+enabled: true
 settings:
-  client_id: null
-  client_secret: null
+  client_id: 64f75e1fbd3849adcf9c
+  client_secret: 2b9a407c307e617968102acd59a667bd511974f7
+  redirect_url: ''

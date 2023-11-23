@@ -8,6 +8,7 @@ dependencies:
     - field.field.node.contact.field_awardee_user
     - field.field.node.contact.field_contact_role
     - field.field.node.contact.field_contact_type
+    - field.field.node.contact.field_invite_email
     - node.type.contact
 id: node.contact.default
 targetEntityType: node
@@ -17,12 +18,6 @@ content:
   field_admin_user:
     type: options_select
     weight: 1
-    region: content
-    settings: {  }
-    third_party_settings: {  }
-  field_awardee_user:
-    type: options_select
-    weight: 4
     region: content
     settings: {  }
     third_party_settings: {  }
@@ -49,6 +44,8 @@ content:
 hidden:
   created: true
   field_active: true
+  field_awardee_user: true
+  field_invite_email: true
   path: true
   promote: true
   status: true
