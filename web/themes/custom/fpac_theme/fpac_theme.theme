@@ -43,15 +43,18 @@ function fpac_theme_preprocess_input(&$variables) {
 }
 
 /**
- * Implements hook_theme_suggestions_form_alter().
+ * Implements hook_theme_suggestions_HOOK_alter() for form.
  */
 function fpac_theme_theme_suggestions_form_alter(array &$suggestions, array $variables) {
   $form_id = $variables['element']['#id'];
   if ($form_id == 'node-awardee-org-form') {
     $suggestions[] = 'form__node_awardee_org';
-  } else if ($form_id == 'node-award-form') {
+  }
+  elseif ($form_id == 'node-award-form') {
     $suggestions[] = 'form__node_award';
-  } else if ($form_id == 'node-project-form') {
+  }
+  elseif ($form_id == 'node-project-form') {
     $suggestions[] = 'form__node_project';
   }
 }
+
