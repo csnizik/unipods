@@ -57,21 +57,22 @@
 
   {{ page.help }}
 
-  <main role="main">
+  <main role="main" class="fsa-grid">
     <a id="main-content" tabindex="-1"></a>{# link is in html.html.twig #}
 
-    <div class="layout-content">
-      {{ page.content }}
-    </div>{# /.layout-content #}
-
     {% if page.sidebar_first %}
-      <aside class="layout-sidebar-first" role="complementary">
+      <aside class="layout-sidebar-first" role="complementary" class="fsa-grid__1/6@m">
         {{ page.sidebar_first }}
       </aside>
     {% endif %}
 
+    <div class="layout-content fsa-grid__1/1 fsa-grid__auto@m fsa-m-l--l fsa-m-r--l">
+      {{ page.content }}
+    </div>{# /.layout-content #}
+
+
     {% if page.sidebar_second %}
-      <aside class="layout-sidebar-second" role="complementary">
+      <aside class="layout-sidebar-second" role="complementary" class="fsa-grid__1/6@m">
         {{ page.sidebar_second }}
       </aside>
     {% endif %}
