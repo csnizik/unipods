@@ -1,0 +1,36 @@
+uuid: 8b7d3396-3e32-4d03-ac89-b0f1308945c8
+langcode: en
+status: true
+dependencies:
+  config:
+    - core.entity_view_mode.node.teaser
+    - field.field.node.waste_treatment_lagoon.field_county
+    - field.field.node.waste_treatment_lagoon.field_farm_id
+    - field.field.node.waste_treatment_lagoon.field_field_id
+    - field.field.node.waste_treatment_lagoon.field_lagoon_aeration
+    - field.field.node.waste_treatment_lagoon.field_lagoon_cover
+    - field.field.node.waste_treatment_lagoon.field_state_territory
+    - field.field.node.waste_treatment_lagoon.field_tract_id
+    - field.field.node.waste_treatment_lagoon.field_waste_system
+    - node.type.waste_treatment_lagoon
+  module:
+    - user
+id: node.waste_treatment_lagoon.teaser
+targetEntityType: node
+bundle: waste_treatment_lagoon
+mode: teaser
+content:
+  links:
+    settings: {  }
+    third_party_settings: {  }
+    weight: 100
+    region: content
+hidden:
+  field_county: true
+  field_farm_id: true
+  field_field_id: true
+  field_lagoon_aeration: true
+  field_lagoon_cover: true
+  field_state_territory: true
+  field_tract_id: true
+  field_waste_system: true

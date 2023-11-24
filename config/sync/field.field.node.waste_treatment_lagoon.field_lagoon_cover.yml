@@ -1,0 +1,19 @@
+uuid: 61983e5f-128e-4b25-8746-8bea8e44a7e6
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_lagoon_cover
+    - node.type.waste_treatment_lagoon
+id: node.waste_treatment_lagoon.field_lagoon_cover
+field_name: field_lagoon_cover
+entity_type: node
+bundle: waste_treatment_lagoon
+label: 'Is there a lagoon cover/crust?'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

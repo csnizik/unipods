@@ -1,0 +1,19 @@
+uuid: 5b76bb19-4820-4695-82b4-f56dfae53878
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_waste_system
+    - node.type.waste_treatment_lagoon
+id: node.waste_treatment_lagoon.field_waste_system
+field_name: field_waste_system
+entity_type: node
+bundle: waste_treatment_lagoon
+label: 'Waste storage system prior to installing waste treatment lagoon'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

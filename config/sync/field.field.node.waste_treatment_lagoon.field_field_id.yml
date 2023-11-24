@@ -1,0 +1,19 @@
+uuid: e3cf6868-f4bc-4ad1-9715-53dd88ce5570
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_field_id
+    - node.type.waste_treatment_lagoon
+id: node.waste_treatment_lagoon.field_field_id
+field_name: field_field_id
+entity_type: node
+bundle: waste_treatment_lagoon
+label: 'Field ID'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

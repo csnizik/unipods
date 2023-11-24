@@ -1,0 +1,21 @@
+uuid: eaedc17e-de86-4975-98ca-f70d34d6bffd
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_state_territory
+    - node.type.waste_treatment_lagoon
+  module:
+    - options
+id: node.waste_treatment_lagoon.field_state_territory
+field_name: field_state_territory
+entity_type: node
+bundle: waste_treatment_lagoon
+label: 'State or Territory'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: list_string

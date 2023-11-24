@@ -1,0 +1,91 @@
+uuid: d7020006-ba1f-4f76-890f-5548fb750f9e
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.node.waste_treatment_lagoon.field_county
+    - field.field.node.waste_treatment_lagoon.field_farm_id
+    - field.field.node.waste_treatment_lagoon.field_field_id
+    - field.field.node.waste_treatment_lagoon.field_lagoon_aeration
+    - field.field.node.waste_treatment_lagoon.field_lagoon_cover
+    - field.field.node.waste_treatment_lagoon.field_state_territory
+    - field.field.node.waste_treatment_lagoon.field_tract_id
+    - field.field.node.waste_treatment_lagoon.field_waste_system
+    - node.type.waste_treatment_lagoon
+  module:
+    - options
+    - user
+id: node.waste_treatment_lagoon.default
+targetEntityType: node
+bundle: waste_treatment_lagoon
+mode: default
+content:
+  field_county:
+    type: string
+    label: above
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    weight: 105
+    region: content
+  field_farm_id:
+    type: string
+    label: above
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    weight: 101
+    region: content
+  field_field_id:
+    type: string
+    label: above
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    weight: 102
+    region: content
+  field_lagoon_aeration:
+    type: string
+    label: above
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    weight: 108
+    region: content
+  field_lagoon_cover:
+    type: string
+    label: above
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    weight: 107
+    region: content
+  field_state_territory:
+    type: list_default
+    label: above
+    settings: {  }
+    third_party_settings: {  }
+    weight: 104
+    region: content
+  field_tract_id:
+    type: string
+    label: above
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    weight: 103
+    region: content
+  field_waste_system:
+    type: string
+    label: above
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    weight: 106
+    region: content
+  links:
+    settings: {  }
+    third_party_settings: {  }
+    weight: 100
+    region: content
+hidden: {  }

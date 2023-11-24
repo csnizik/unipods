@@ -1,0 +1,19 @@
+uuid: c2772f8c-a151-4c6e-bd77-289676fc3b6c
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_tract_id
+    - node.type.waste_treatment_lagoon
+id: node.waste_treatment_lagoon.field_tract_id
+field_name: field_tract_id
+entity_type: node
+bundle: waste_treatment_lagoon
+label: 'Tract ID'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

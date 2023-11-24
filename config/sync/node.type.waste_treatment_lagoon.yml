@@ -1,0 +1,17 @@
+uuid: 4147c6f3-1eb8-4a8a-80f7-391610b51507
+langcode: en
+status: true
+dependencies:
+  module:
+    - menu_ui
+third_party_settings:
+  menu_ui:
+    available_menus: {  }
+    parent: ''
+name: 'Waste Treatment Lagoon'
+type: waste_treatment_lagoon
+description: ''
+help: ''
+new_revision: false
+preview_mode: 0
+display_submitted: false
