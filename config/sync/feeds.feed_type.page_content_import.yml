@@ -1,0 +1,141 @@
+uuid: 0753c993-42b1-412a-88c7-7698b278dd4c
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.node.waste_treatment_lagoon.field_county
+    - field.field.node.waste_treatment_lagoon.field_farm_id
+    - field.field.node.waste_treatment_lagoon.field_lagoon_aeration
+    - field.field.node.waste_treatment_lagoon.field_lagoon_cover
+    - field.field.node.waste_treatment_lagoon.field_state_territory
+    - field.field.node.waste_treatment_lagoon.field_tract_id
+    - field.field.node.waste_treatment_lagoon.field_waste_system
+    - node.type.waste_treatment_lagoon
+  module:
+    - node
+label: 'Page Content Import'
+id: page_content_import
+description: ''
+help: ''
+import_period: 3600
+fetcher: upload
+fetcher_configuration:
+  allowed_extensions: 'txt csv tsv xml opml'
+  directory: 'private://feeds'
+parser: csv
+parser_configuration:
+  delimiter: ','
+  no_headers: false
+  line_limit: 100
+processor: 'entity:node'
+processor_configuration:
+  values:
+    type: waste_treatment_lagoon
+  langcode: en
+  insert_new: 1
+  update_existing: 0
+  update_non_existent: _keep
+  skip_hash_check: false
+  authorize: true
+  revision: false
+  expire: -1
+  owner_feed_author: false
+  owner_id: 0
+custom_sources:
+  title:
+    value: title
+    label: title
+    machine_name: title
+    type: csv
+  field_farm_id:
+    value: field_farm_id
+    label: field_farm_id
+    machine_name: field_farm_id
+    type: csv
+  field_tract_id:
+    value: field_tract_id
+    label: field_tract_id
+    machine_name: field_tract_id
+    type: csv
+  field_state_territory:
+    value: field_state_territory
+    label: field_state_territory
+    machine_name: field_state_territory
+    type: csv
+  field_count:
+    value: field_count
+    label: field_count
+    machine_name: field_count
+    type: csv
+  field_waste_system:
+    value: field_waste_system
+    label: field_waste_system
+    machine_name: field_waste_system
+    type: csv
+  field_lagoon_cover:
+    value: field_lagoon_cover
+    label: field_lagoon_cover
+    machine_name: field_lagoon_cover
+    type: csv
+  field_lagoon_aeration:
+    value: field_lagoon_aeration
+    label: field_lagoon_aeration
+    machine_name: field_lagoon_aeration
+    type: csv
+mappings:
+  -
+    target: title
+    map:
+      value: title
+    settings:
+      language: null
+    unique:
+      value: 1
+  -
+    target: field_farm_id
+    map:
+      value: field_farm_id
+    settings:
+      language: null
+    unique: {  }
+  -
+    target: field_tract_id
+    map:
+      value: field_tract_id
+    settings:
+      language: null
+    unique: {  }
+  -
+    target: field_state_territory
+    map:
+      value: field_state_territory
+    settings:
+      language: null
+  -
+    target: field_county
+    map:
+      value: field_count
+    settings:
+      language: null
+    unique: {  }
+  -
+    target: field_waste_system
+    map:
+      value: field_waste_system
+    settings:
+      language: null
+    unique: {  }
+  -
+    target: field_lagoon_cover
+    map:
+      value: field_lagoon_cover
+    settings:
+      language: null
+    unique: {  }
+  -
+    target: field_lagoon_aeration
+    map:
+      value: field_lagoon_aeration
+    settings:
+      language: null
+    unique: {  }

@@ -33,6 +33,7 @@
     "drupal/email_registration": "^2.0@RC",
     "drupal/entity_reference_validators": "^1.0@beta",
     "drupal/erd": "^2.0@alpha",
+    "drupal/feeds": "^3.0@beta",
     "drupal/field_group": "^3.4",
     "drupal/field_permissions": "^1.2",
     "drupal/flexible_permissions": "^1.1",

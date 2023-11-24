@@ -3,6 +3,7 @@ langcode: en
 status: true
 dependencies:
   config:
+    - field.field.node.waste_treatment_lagoon.feeds_item
     - field.field.node.waste_treatment_lagoon.field_county
     - field.field.node.waste_treatment_lagoon.field_farm_id
     - field.field.node.waste_treatment_lagoon.field_field_id
@@ -88,4 +89,5 @@ content:
     third_party_settings: {  }
     weight: 100
     region: content
-hidden: {  }
+hidden:
+  feeds_item: true
