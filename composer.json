@@ -50,6 +50,7 @@
     "drupal/rules_token": "^2.0",
     "drupal/simple_user_management": "^1.5",
     "drupal/webform": "^6.2",
+    "drupal/webform_submission_import": "^2.1",
     "drupal/yearonly": "^9.1",
     "drush/drush": "^12.4"
   },
