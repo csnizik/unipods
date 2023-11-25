@@ -1,0 +1,25 @@
+uuid: 45b534f9-8e30-48b6-993a-275570f3a157
+langcode: en
+status: true
+dependencies: {  }
+id: nrcs_awardee
+label: 'NRCS Awardee'
+description: ''
+conf:
+  usertab: false
+  extensions: csv
+  maxsize: 1.0
+  quota: 1.0
+  maxwidth: null
+  maxheight: null
+  replace: 1
+  thumbnail_style: ''
+  thumbnail_grid_style: false
+  ignore_usage: false
+  url_alter: false
+  folders:
+    -
+      path: 'private/csv/users/user[user:uid]'
+      permissions:
+        upload_files: true
+        delete_files: true

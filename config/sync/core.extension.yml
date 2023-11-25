@@ -50,6 +50,7 @@ module:
   history: 0
   ief_table_view_mode: 0
   image: 0
+  imce: 0
   inline_entity_form: 0
   jquery_ui: 0
   jquery_ui_autocomplete: 0

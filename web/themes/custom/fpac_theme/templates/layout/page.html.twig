@@ -42,47 +42,49 @@
  * @see html.html.twig
  */
 #}
-<div class="layout-container">
-
-  <header role="banner">
-    {{ page.header }}
-  </header>
-
-  {{ page.primary_menu }}
-  {{ page.secondary_menu }}
-
-  {{ page.breadcrumb }}
-
-  {{ page.highlighted }}
-
-  {{ page.help }}
-
-  <main role="main" class="fsa-grid">
-    <a id="main-content" tabindex="-1"></a>{# link is in html.html.twig #}
-
-    {% if page.sidebar_first %}
-      <aside class="layout-sidebar-first" role="complementary" class="fsa-grid__1/6@m">
-        {{ page.sidebar_first }}
-      </aside>
-    {% endif %}
-
-    <div class="layout-content fsa-grid__1/1 fsa-grid__auto@m fsa-m-l--l fsa-m-r--l">
-      {{ page.content }}
-    </div>{# /.layout-content #}
 
 
-    {% if page.sidebar_second %}
-      <aside class="layout-sidebar-second" role="complementary" class="fsa-grid__1/6@m">
-        {{ page.sidebar_second }}
-      </aside>
-    {% endif %}
 
-  </main>
+<header role="banner">
+	{{ page.header }}
+	{{ page.primary_menu }}
+	{{ page.breadcrumb }}
+</header>
 
-  {% if page.footer %}
-    <footer role="contentinfo">
-      {{ page.footer }}
-    </footer>
-  {% endif %}
+<div class="fsa-section ">
+	<div class="fsa-section__bd">
+		<main class="fsa-grid" role="main">
+			{{ page.help }}
+			{{ page.highlighted }}
+			{% if page.sidebar_first %}
+			<aside class="fsa-grid__1/6@m" class="layout-sidebar-first" role="complementary">
+				{{ page.sidebar_first }}
+			</aside>
+			{% endif %}
+			<a id="main-content" tabindex="-1"></a>
+			<div class="layout-content fsa-grid__1/1 fsa-grid__auto@m fsa-m-l--l fsa-m-r--l">
+				{{ page.content }}
+			</div>{# /.layout-content #}
+			{% if page.sidebar_second %}
+			<aside class="fsa-grid__1/6@m" class="layout-sidebar-second" role="complementary">
+				{{ page.sidebar_second }}
+			</aside>
+			{% endif %}
+		</main>
+	</div>
+</div>
+{% if page.footer %}
+<footer role="contentinfo">
+{{ page.footer }}
+</footer>
+{% endif %}
+{{ page.secondary_menu }}
 
-</div>{# /.layout-container #}
+
+
+
+
+
+
+
+

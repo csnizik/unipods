@@ -41,6 +41,7 @@
     "drupal/geofield": "^1.56",
     "drupal/group": "^3.2",
     "drupal/ief_table_view_mode": "^2.3",
+    "drupal/imce": "^3.0",
     "drupal/inline_entity_form": "^1.0@RC",
     "drupal/msqrole": "^1.0",
     "drupal/name": "^1.0@RC",

@@ -1,9 +1,12 @@
 uuid: 25b01452-1ddb-4d98-b10f-d3e1b248478e
 langcode: en
 status: true
-dependencies: {  }
+dependencies:
+  module:
+    - file
 id: nrcs_awardee
 label: 'NRCS Awardee'
 weight: 7
 is_admin: null
-permissions: {  }
+permissions:
+  - 'access files overview'
