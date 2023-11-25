@@ -1,6 +1,6 @@
 "title","field_farm_id","field_tract_id","field_field_id","field_state_territory","field_county","field_waste_system","field_lagoon_cover","field_lagoon_aeration"
 "CPS359-215-171-193","215","171","193","LA","Russell","None","Yes","Yes"
-"CPS359-139-51-60","139","51","60","MS","Johnson","Organic","No","No"
+"CPS359-139-51-60","139","51","60","MS","Johnson","Organic","Yes","Yes"
 "CPS359-78-132-184","78","132","184","LA","Monroe","None","Yes","Yes"
 "CPS359-165-209-14","165","209","14","TX","Thompson","None","No","Yes"
 "CPS359-181-65-132","181","65","132","AR","Henderson","None","No","Yes"
