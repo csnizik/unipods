@@ -1,0 +1,36 @@
+uuid: 0df5165e-2e5c-4bd7-b84f-0bbb5820dbc5
+langcode: en
+status: true
+dependencies:
+  config:
+    - feeds.feed_type.page_content_import
+id: feeds_feed.page_content_import.default
+targetEntityType: feeds_feed
+bundle: page_content_import
+mode: default
+content:
+  created:
+    type: datetime_timestamp
+    weight: 10
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+  title:
+    type: string_textfield
+    weight: -5
+    region: content
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+  uid:
+    type: entity_reference_autocomplete
+    weight: 5
+    region: content
+    settings:
+      match_operator: CONTAINS
+      match_limit: 10
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+hidden: {  }
