@@ -52,3 +52,29 @@ function pods_helpers_user_login(UserInterface $account) {
   }
   $user->save();
 }
+
+/**
+ * Implements hook_form_FORM_ID_alter() for CSV Importer form.
+ */
+function pods_helpers_form_csv_importer_form_alter(&$form, &$form_state, $form_id) {
+  // Check if the user has the 'nrcs-awardee' role.
+  $user = \Drupal::currentUser();
+  if (in_array('nrcs-awardee', $user->getRoles())) {
+    // Set default value for 'Select entity type'.
+    $form['entity_type']['#default_value'] = 'content';
+    // Hide the field.
+    $form['entity_type']['#access'] = FALSE;
+
+    // Set options for 'Select entity bundle'.
+    $form['entity_bundle']['#options'] = [
+      'waste_treatment' => 'Waste Treatment',
+      'waste_treatment_lagoon' => 'Waste Treatment Lagoon',
+    ];
+
+    // Set default value for 'Select Delimiter' and hide it.
+    // Assuming comma is the delimiter.
+    $form['delimiter']['#default_value'] = ',';
+    // Hide the field.
+    $form['delimiter']['#access'] = FALSE;
+  }
+}
