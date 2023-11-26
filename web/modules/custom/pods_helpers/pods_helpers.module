@@ -12,9 +12,9 @@ use Drupal\user\Entity\User;
  */
 function pods_helpers_user_login(UserInterface $account) {
   $currentRoles = $account->getRoles();
-  if (!empty($currentRoles)) {
-    return;
-  }
+  // If (!empty($currentRoles)) {
+  // return;
+  // }.
   $userEmail = $account->getEmail();
   $user = User::load($account->id());
   // @todo handle missing values on received token
@@ -30,51 +30,58 @@ function pods_helpers_user_login(UserInterface $account) {
   }
   elseif (count($contacts) > 1) {
     Drupal::logger('pods_helpers')->info('more than one contact found');
-    // This should not happen once the entity create hook is finished.
+    // @todo create an entity create hook for a contact entity that checks for existing contacts with the same email and prevents
     return;
   }
 
   // @todo unset all roles first so that the only roles the user has are the ones we are setting here
   // We don't want an array.
   $contact = reset($contacts);
-  if ($contact->get('field_contact_role') !== NULL) {
+  $assignedRole = NULL;
+  $assignedType = NULL;
+  $assignedAdmin = NULL;
+  if ($contact->hasField('field_contact_role') && !$contact->get('field_contact_role')->isEmpty()) {
     $assignedRole = $contact->get('field_contact_role')->value;
   }
-  if ($contact->get('field_contact_type') !== NULL) {
+  if ($contact->hasField('field_contact_type') && !$contact->get('field_contact_type')->isEmpty()) {
     $assignedType = $contact->get('field_contact_type')->value;
   }
+  if ($contact->hasField('field_admin_user') && !$contact->get('field_admin_user')->isEmpty()) {
+    $assignedAdmin = $contact->get('field_admin_user')->target_id;
+  }
+  else {
+    // If 'field_admin_user' is empty, by default we use the author of the contact node.
+    $assignedAdmin = $contact->getOwnerId();
+  }
+  $user->addRole($assignedRole)
+    ->addRole($assignedType)
+    ->set('field_admin_user', $assignedAdmin)
+    ->save();
 
-  if (isset($assignedRole)) {
-    $user->addRole($assignedRole);
-  }
-  if (isset($assignedType)) {
-    $user->addRole($assignedType);
-  }
-  $user->save();
+  Drupal::logger('pods_helpers')->info('role: %role, type: %type, admin: %admin', ['%role' => $assignedRole, '%type' => $assignedType, '%admin' => $assignedAdmin]);
+
 }
 
+// @todo configure importer to use either CSV Importer, Feeds, or Webform
 /**
  * Implements hook_form_FORM_ID_alter() for CSV Importer form.
  */
-function pods_helpers_form_csv_importer_form_alter(&$form, &$form_state, $form_id) {
-  // Check if the user has the 'nrcs-awardee' role.
-  $user = \Drupal::currentUser();
-  if (in_array('nrcs-awardee', $user->getRoles())) {
-    // Set default value for 'Select entity type'.
-    $form['entity_type']['#default_value'] = 'content';
-    // Hide the field.
-    $form['entity_type']['#access'] = FALSE;
-
-    // Set options for 'Select entity bundle'.
-    $form['entity_bundle']['#options'] = [
-      'waste_treatment' => 'Waste Treatment',
-      'waste_treatment_lagoon' => 'Waste Treatment Lagoon',
-    ];
-
-    // Set default value for 'Select Delimiter' and hide it.
-    // Assuming comma is the delimiter.
-    $form['delimiter']['#default_value'] = ',';
-    // Hide the field.
-    $form['delimiter']['#access'] = FALSE;
-  }
-}
+// Function pods_helpers_form_csv_importer_form_alter(&$form, &$form_state, $form_id) {
+// Check if the user has the 'nrcs-awardee' role.
+// $user = \Drupal::currentUser();
+// If (in_array('nrcs_awardee', $user->getRoles())) {
+//   $form['importer']['entity_type']['#access'] = FALSE;
+//   $form['importer']['entity_type']['#default_value'] = 'node';.
+// $form['importer']['delimiter']['#access'] = FALSE;
+// $form['importer']['delimiter']['#default_value'] = ',';
+// $form['importer']['entity_type_bundle'] = [
+//     '#type' => 'select',
+//     '#title' => t('Select sheet type'),
+//     '#options' => [
+//       'waste_treatment' => t('Waste Treatment'),
+//       'waste_treatment_lagoon' => t('Waste Treatment Lagoon')
+//     ],
+//     '#required' => TRUE,
+//   ];
+// }
+// }.
