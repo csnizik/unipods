@@ -4,6 +4,7 @@ status: true
 dependencies:
   config:
     - core.entity_view_mode.user.compact
+    - field.field.user.user.field_admin_user
     - field.field.user.user.field_eauth_id
     - field.field.user.user.field_name
     - field.field.user.user.user_picture
@@ -30,6 +31,7 @@ content:
     weight: 0
     region: content
 hidden:
+  field_admin_user: true
   field_eauth_id: true
   field_name: true
   member_for: true

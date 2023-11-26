@@ -12,31 +12,45 @@ use Drupal\user\Entity\User;
  */
 function pods_helpers_user_login(UserInterface $account) {
   $currentRoles = $account->getRoles();
-  // If (!empty($currentRoles)) {
-  // return;
-  // }.
-  $userEmail = $account->getEmail();
-  $user = User::load($account->id());
-  // @todo handle missing values on received token
-  // if (check for missing eauthID and any other values from token) {
-  //   logout user and log message;
-  // }
-  // $user->set('field_eauth_id', 'TESTING')->save();
-  // and set other values on user entity.
-  $contacts = \Drupal::entityTypeManager()->getStorage('node')->loadByProperties(['type' => 'contact', 'title' => $userEmail]);
-  if (empty($contacts)) {
-    Drupal::logger('pods_helpers')->info('user not found: %user', ['%user' => $userEmail]);
-    // @todo add a forced logout here
-  }
-  elseif (count($contacts) > 1) {
-    Drupal::logger('pods_helpers')->info('more than one contact found');
-    // @todo create an entity create hook for a contact entity that checks for existing contacts with the same email and prevents
+  if (count($currentRoles) > 1) {
+    // On user creation (including a user created via an eAuth initial login), Drupal automatically assigns the "authenticated" role.
+    // Any user who has a role assigned to it will have "authenticated" plus whatever role they have. We want this hook to target only
+    // new users who are (presumably) logging in using eAuth.
+    // @todo can this be converted to a better method?
     return;
   }
-
-  // @todo unset all roles first so that the only roles the user has are the ones we are setting here
+  $userEmail = $account->getEmail();
+  // @todo handle missing values on received token
+  // if (check for missing eauthID and any other values from token) {
+    //   logout user and log message;
+    // }
+    // $user->set('field_eauth_id', 'TESTING')->save();
+    // and set other values on user entity.
+    $contacts = \Drupal::entityTypeManager()->getStorage('node')->loadByProperties(['type' => 'contact', 'title' => $userEmail]);
+    if (empty($contacts)) {
+      Drupal::logger('pods_helpers')->info('user not found: %user', ['%user' => $userEmail]);
+      return;
+      // @todo add a forced logout here
+    }
+  elseif (count($contacts) > 1) {
+    Drupal::logger('pods_helpers')->info('more than one contact found');
+    return;
+    // @todo create an entity create hook for a contact entity that checks for existing contacts with the same email and prevents
+  }
   // We don't want an array.
   $contact = reset($contacts);
+
+  $userId = $account->id();
+  $user = User::load($userId);
+  // @todo unset all roles first so that the only roles the user has are the ones we are setting here
+  // Update the contact entity by setting its "active" field to "Active".
+  if ($contact->hasField('field_active')) {
+    $contact->set('field_active', TRUE)->save();
+  }
+  if ($contact->hasField('field_awardee_user')) {
+    $contact->field_awardee_user->target_id = $userId;
+    $contact->save();
+  }
   $assignedRole = NULL;
   $assignedType = NULL;
   $assignedAdmin = NULL;
@@ -57,9 +71,6 @@ function pods_helpers_user_login(UserInterface $account) {
     ->addRole($assignedType)
     ->set('field_admin_user', $assignedAdmin)
     ->save();
-
-  Drupal::logger('pods_helpers')->info('role: %role, type: %type, admin: %admin', ['%role' => $assignedRole, '%type' => $assignedType, '%admin' => $assignedAdmin]);
-
 }
 
 // @todo configure importer to use either CSV Importer, Feeds, or Webform

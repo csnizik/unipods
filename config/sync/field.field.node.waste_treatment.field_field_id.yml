@@ -1,0 +1,19 @@
+uuid: 3e126618-a02f-4e33-8722-4ba11f5a41ab
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_field_id
+    - node.type.waste_treatment
+id: node.waste_treatment.field_field_id
+field_name: field_field_id
+entity_type: node
+bundle: waste_treatment
+label: 'Field ID'
+description: ''
+required: true
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

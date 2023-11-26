@@ -1,0 +1,17 @@
+uuid: d886dba0-4493-4533-a27e-3d62a7c15195
+langcode: en
+status: true
+dependencies:
+  module:
+    - menu_ui
+third_party_settings:
+  menu_ui:
+    available_menus: {  }
+    parent: ''
+name: 'Waste Treatment'
+type: waste_treatment
+description: ''
+help: ''
+new_revision: false
+preview_mode: 0
+display_submitted: false

@@ -4,6 +4,8 @@ status: true
 dependencies:
   config:
     - field.storage.node.field_active
+    - field.storage.node.field_admin_user
+    - field.storage.node.field_awardee_user
     - node.type.contact
     - user.role.nrcs_admin
   module:
@@ -36,7 +38,7 @@ display:
           entity_field: title
           plugin_id: field
           label: Title
-          exclude: true
+          exclude: false
           alter:
             alter_text: false
             text: ''
@@ -68,7 +70,7 @@ display:
           element_class: ''
           element_label_type: ''
           element_label_class: ''
-          element_label_colon: false
+          element_label_colon: true
           element_wrapper_type: ''
           element_wrapper_class: ''
           element_default_classes: true
@@ -99,7 +101,7 @@ display:
           admin_label: ''
           plugin_id: field
           label: Active
-          exclude: true
+          exclude: false
           alter:
             alter_text: false
             text: ''
@@ -142,10 +144,138 @@ display:
           click_sort_column: value
           type: boolean
           settings:
-            format: true-false
+            format: default
             format_custom_false: ''
             format_custom_true: ''
           group_column: value
+          group_columns: {  }
+          group_rows: true
+          delta_limit: 0
+          delta_offset: 0
+          delta_reversed: false
+          delta_first_last: false
+          multi_type: separator
+          separator: ', '
+          field_api_classes: false
+        name_1:
+          id: name_1
+          table: users_field_data
+          field: name
+          relationship: uid
+          group_type: group
+          admin_label: ''
+          entity_type: user
+          entity_field: name
+          plugin_id: field
+          label: Name
+          exclude: false
+          alter:
+            alter_text: false
+            text: ''
+            make_link: false
+            path: ''
+            absolute: false
+            external: false
+            replace_spaces: false
+            path_case: none
+            trim_whitespace: false
+            alt: ''
+            rel: ''
+            link_class: ''
+            prefix: ''
+            suffix: ''
+            target: ''
+            nl2br: false
+            max_length: 0
+            word_boundary: true
+            ellipsis: true
+            more_link: false
+            more_link_text: ''
+            more_link_path: ''
+            strip_tags: false
+            trim: false
+            preserve_tags: ''
+            html: false
+          element_type: ''
+          element_class: ''
+          element_label_type: ''
+          element_label_class: ''
+          element_label_colon: true
+          element_wrapper_type: ''
+          element_wrapper_class: ''
+          element_default_classes: true
+          empty: ''
+          hide_empty: false
+          empty_zero: false
+          hide_alter_empty: true
+          click_sort_column: value
+          type: user_name
+          settings:
+            link_to_entity: true
+          group_column: value
+          group_columns: {  }
+          group_rows: true
+          delta_limit: 0
+          delta_offset: 0
+          delta_reversed: false
+          delta_first_last: false
+          multi_type: separator
+          separator: ', '
+          field_api_classes: false
+        field_admin_user:
+          id: field_admin_user
+          table: node__field_admin_user
+          field: field_admin_user
+          relationship: none
+          group_type: group
+          admin_label: ''
+          plugin_id: field
+          label: 'Admin Override'
+          exclude: false
+          alter:
+            alter_text: false
+            text: ''
+            make_link: false
+            path: ''
+            absolute: false
+            external: false
+            replace_spaces: false
+            path_case: none
+            trim_whitespace: false
+            alt: ''
+            rel: ''
+            link_class: ''
+            prefix: ''
+            suffix: ''
+            target: ''
+            nl2br: false
+            max_length: 0
+            word_boundary: true
+            ellipsis: true
+            more_link: false
+            more_link_text: ''
+            more_link_path: ''
+            strip_tags: false
+            trim: false
+            preserve_tags: ''
+            html: false
+          element_type: ''
+          element_class: ''
+          element_label_type: ''
+          element_label_class: ''
+          element_label_colon: true
+          element_wrapper_type: ''
+          element_wrapper_class: ''
+          element_default_classes: true
+          empty: ''
+          hide_empty: false
+          empty_zero: false
+          hide_alter_empty: true
+          click_sort_column: target_id
+          type: entity_reference_label
+          settings:
+            link: false
+          group_column: target_id
           group_columns: {  }
           group_rows: true
           delta_limit: 0
@@ -159,14 +289,14 @@ display:
           id: name
           table: users_field_data
           field: name
-          relationship: field_awardee_user
+          relationship: field_admin_user
           group_type: group
           admin_label: ''
           entity_type: user
           entity_field: name
           plugin_id: field
-          label: Name
-          exclude: true
+          label: 'Admin override - user'
+          exclude: false
           alter:
             alter_text: false
             text: ''
@@ -209,6 +339,134 @@ display:
           click_sort_column: value
           type: user_name
           settings:
+            link_to_entity: false
+          group_column: value
+          group_columns: {  }
+          group_rows: true
+          delta_limit: 0
+          delta_offset: 0
+          delta_reversed: false
+          delta_first_last: false
+          multi_type: separator
+          separator: ', '
+          field_api_classes: false
+        field_awardee_user:
+          id: field_awardee_user
+          table: node__field_awardee_user
+          field: field_awardee_user
+          relationship: none
+          group_type: group
+          admin_label: ''
+          plugin_id: field
+          label: Awardee
+          exclude: false
+          alter:
+            alter_text: false
+            text: ''
+            make_link: false
+            path: ''
+            absolute: false
+            external: false
+            replace_spaces: false
+            path_case: none
+            trim_whitespace: false
+            alt: ''
+            rel: ''
+            link_class: ''
+            prefix: ''
+            suffix: ''
+            target: ''
+            nl2br: false
+            max_length: 0
+            word_boundary: true
+            ellipsis: true
+            more_link: false
+            more_link_text: ''
+            more_link_path: ''
+            strip_tags: false
+            trim: false
+            preserve_tags: ''
+            html: false
+          element_type: ''
+          element_class: ''
+          element_label_type: ''
+          element_label_class: ''
+          element_label_colon: false
+          element_wrapper_type: ''
+          element_wrapper_class: ''
+          element_default_classes: true
+          empty: ''
+          hide_empty: false
+          empty_zero: false
+          hide_alter_empty: true
+          click_sort_column: target_id
+          type: entity_reference_label
+          settings:
+            link: true
+          group_column: target_id
+          group_columns: {  }
+          group_rows: true
+          delta_limit: 0
+          delta_offset: 0
+          delta_reversed: false
+          delta_first_last: false
+          multi_type: separator
+          separator: ', '
+          field_api_classes: false
+        name_2:
+          id: name_2
+          table: users_field_data
+          field: name
+          relationship: field_awardee_user
+          group_type: group
+          admin_label: ''
+          entity_type: user
+          entity_field: name
+          plugin_id: field
+          label: Name
+          exclude: false
+          alter:
+            alter_text: false
+            text: ''
+            make_link: false
+            path: ''
+            absolute: false
+            external: false
+            replace_spaces: false
+            path_case: none
+            trim_whitespace: false
+            alt: ''
+            rel: ''
+            link_class: ''
+            prefix: ''
+            suffix: ''
+            target: ''
+            nl2br: false
+            max_length: 0
+            word_boundary: true
+            ellipsis: true
+            more_link: false
+            more_link_text: ''
+            more_link_path: ''
+            strip_tags: false
+            trim: false
+            preserve_tags: ''
+            html: false
+          element_type: ''
+          element_class: ''
+          element_label_type: ''
+          element_label_class: ''
+          element_label_colon: true
+          element_wrapper_type: ''
+          element_wrapper_class: ''
+          element_default_classes: true
+          empty: ''
+          hide_empty: false
+          empty_zero: false
+          hide_alter_empty: true
+          click_sort_column: value
+          type: user_name
+          settings:
             link_to_entity: true
           group_column: value
           group_columns: {  }
@@ -232,7 +490,7 @@ display:
           exclude: false
           alter:
             alter_text: true
-            text: '{{ field_active ? name : title }}'
+            text: '{{ field_awardee_user ? field_awardee_user : title }}'
             make_link: false
             path: ''
             absolute: false
@@ -281,7 +539,7 @@ display:
           exclude: false
           alter:
             alter_text: true
-            text: "<span class=\"fsa-label{{ field_active == 'Active' ? ' fsa-label--success' : ' fsa-label--warning' }}\\\">{{ field_active == 'Active' ? 'Active' : 'Pending' }}</span>"
+            text: "<span class=\"fsa-label{{ field_active  ? ' fsa-label--success' : ' fsa-label--warning' }}\\\">{{ field_active ? 'Active' : 'Pending' }}</span>"
             make_link: false
             path: ''
             absolute: false
@@ -311,6 +569,55 @@ display:
           element_label_type: ''
           element_label_class: ''
           element_label_colon: false
+          element_wrapper_type: ''
+          element_wrapper_class: ''
+          element_default_classes: true
+          empty: ''
+          hide_empty: false
+          empty_zero: false
+          hide_alter_empty: false
+        nothing_2:
+          id: nothing_2
+          table: views
+          field: nothing
+          relationship: none
+          group_type: group
+          admin_label: 'effective admin'
+          plugin_id: custom
+          label: 'Admin (incl override)'
+          exclude: false
+          alter:
+            alter_text: true
+            text: "{% if field_admin_user %}\r\n{{ field_admin_user }}\r\n{% else %}\r\n{{ name_1 }}\r\n{% endif %}"
+            make_link: false
+            path: ''
+            absolute: false
+            external: false
+            replace_spaces: false
+            path_case: none
+            trim_whitespace: false
+            alt: ''
+            rel: ''
+            link_class: ''
+            prefix: ''
+            suffix: ''
+            target: ''
+            nl2br: false
+            max_length: 0
+            word_boundary: true
+            ellipsis: true
+            more_link: false
+            more_link_text: ''
+            more_link_path: ''
+            strip_tags: false
+            trim: false
+            preserve_tags: ''
+            html: false
+          element_type: ''
+          element_class: ''
+          element_label_type: ''
+          element_label_class: ''
+          element_label_colon: true
           element_wrapper_type: ''
           element_wrapper_class: ''
           element_default_classes: true
@@ -372,48 +679,7 @@ display:
             field_identifier: ''
           exposed: false
           granularity: second
-      arguments:
-        uid:
-          id: uid
-          table: users_field_data
-          field: uid
-          relationship: field_admin_user
-          group_type: group
-          admin_label: ''
-          entity_type: user
-          entity_field: uid
-          plugin_id: user_uid
-          default_action: default
-          exception:
-            value: all
-            title_enable: false
-            title: All
-          title_enable: false
-          title: ''
-          default_argument_type: current_user
-          default_argument_options: {  }
-          default_argument_skip_url: false
-          summary_options:
-            base_path: ''
-            count: true
-            override: false
-            items_per_page: 25
-          summary:
-            sort_order: asc
-            number_of_records: 0
-            format: default_summary
-          specify_validation: true
-          validate:
-            type: 'entity:user'
-            fail: 'not found'
-          validate_options:
-            access: true
-            operation: view
-            multiple: 0
-            restrict_roles: false
-            roles: {  }
-          break_phrase: false
-          not: false
+      arguments: {  }
       filters:
         status:
           id: status
@@ -448,6 +714,26 @@ display:
           replica: false
           query_tags: {  }
       relationships:
+        field_admin_user:
+          id: field_admin_user
+          table: node__field_admin_user
+          field: field_admin_user
+          relationship: none
+          group_type: group
+          admin_label: 'admin override'
+          plugin_id: standard
+          required: false
+        uid:
+          id: uid
+          table: node_field_data
+          field: uid
+          relationship: none
+          group_type: group
+          admin_label: 'User - contact author'
+          entity_type: node
+          entity_field: uid
+          plugin_id: standard
+          required: true
         field_awardee_user:
           id: field_awardee_user
           table: node__field_awardee_user
@@ -455,15 +741,6 @@ display:
           relationship: none
           group_type: group
           admin_label: 'field_awardee_user: User'
-          plugin_id: standard
-          required: false
-        field_admin_user:
-          id: field_admin_user
-          table: node__field_admin_user
-          field: field_admin_user
-          relationship: none
-          group_type: group
-          admin_label: 'field_admin_user: User'
           plugin_id: standard
           required: false
       header: {  }
@@ -474,12 +751,12 @@ display:
       contexts:
         - 'languages:language_content'
         - 'languages:language_interface'
-        - url
-        - user
         - 'user.node_grants:view'
         - user.roles
       tags:
         - 'config:field.storage.node.field_active'
+        - 'config:field.storage.node.field_admin_user'
+        - 'config:field.storage.node.field_awardee_user'
   block_1:
     id: block_1
     display_title: Block
@@ -492,9 +769,9 @@ display:
       contexts:
         - 'languages:language_content'
         - 'languages:language_interface'
-        - url
-        - user
         - 'user.node_grants:view'
         - user.roles
       tags:
         - 'config:field.storage.node.field_active'
+        - 'config:field.storage.node.field_admin_user'
+        - 'config:field.storage.node.field_awardee_user'

@@ -2,7 +2,7 @@ _core:
   default_config_hash: VDJxTZtQR21qB4lvOq8zszJZLvLKrSPQpdn2E3T71Ww
 langcode: en
 uuid: a8c3ee32-4010-43b0-a4a3-f59b0cb7428c
-name: 'Drush Site-Install'
+name: UniPODS
 mail: admin@example.com
 slogan: ''
 page:

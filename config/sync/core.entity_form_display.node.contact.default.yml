@@ -17,9 +17,19 @@ mode: default
 content:
   field_admin_user:
     type: options_select
-    weight: 1
+    weight: 4
     region: content
     settings: {  }
+    third_party_settings: {  }
+  field_awardee_user:
+    type: entity_reference_autocomplete
+    weight: 1
+    region: content
+    settings:
+      match_operator: CONTAINS
+      match_limit: 10
+      size: 60
+      placeholder: '(can only be set after user is created, i.e. after invited user has logged in)'
     third_party_settings: {  }
   field_contact_role:
     type: options_select
@@ -33,6 +43,14 @@ content:
     region: content
     settings: {  }
     third_party_settings: {  }
+  field_invite_email:
+    type: string_textfield
+    weight: 5
+    region: content
+    settings:
+      size: 60
+      placeholder: "TODO: change field to email type, then use to validate 'title' field"
+    third_party_settings: {  }
   title:
     type: string_textfield
     weight: 0
@@ -44,8 +62,6 @@ content:
 hidden:
   created: true
   field_active: true
-  field_awardee_user: true
-  field_invite_email: true
   path: true
   promote: true
   status: true

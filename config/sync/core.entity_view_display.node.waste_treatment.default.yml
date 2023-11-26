@@ -1,0 +1,75 @@
+uuid: 27ed291e-6d1a-478e-ade9-c78fd65ef183
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.node.waste_treatment.feeds_item
+    - field.field.node.waste_treatment.field_county
+    - field.field.node.waste_treatment.field_farm_id
+    - field.field.node.waste_treatment.field_field_id
+    - field.field.node.waste_treatment.field_state_territory
+    - field.field.node.waste_treatment.field_tract_id
+    - field.field.node.waste_treatment.field_treatment_type
+    - node.type.waste_treatment
+  module:
+    - options
+    - user
+id: node.waste_treatment.default
+targetEntityType: node
+bundle: waste_treatment
+mode: default
+content:
+  field_county:
+    type: string
+    label: above
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    weight: 105
+    region: content
+  field_farm_id:
+    type: string
+    label: above
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    weight: 101
+    region: content
+  field_field_id:
+    type: string
+    label: above
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    weight: 102
+    region: content
+  field_state_territory:
+    type: list_default
+    label: above
+    settings: {  }
+    third_party_settings: {  }
+    weight: 104
+    region: content
+  field_tract_id:
+    type: string
+    label: above
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    weight: 103
+    region: content
+  field_treatment_type:
+    type: string
+    label: above
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    weight: 106
+    region: content
+  links:
+    settings: {  }
+    third_party_settings: {  }
+    weight: 100
+    region: content
+hidden:
+  feeds_item: true

@@ -1,0 +1,22 @@
+uuid: c9d07d3c-1199-450b-8549-6e8b94ed7067
+langcode: en
+status: true
+dependencies:
+  config:
+    - node.type.waste_treatment
+id: node.waste_treatment.promote
+field_name: promote
+entity_type: node
+bundle: waste_treatment
+label: 'Promoted to front page'
+description: ''
+required: false
+translatable: true
+default_value:
+  -
+    value: 0
+default_value_callback: ''
+settings:
+  on_label: 'On'
+  off_label: 'Off'
+field_type: boolean

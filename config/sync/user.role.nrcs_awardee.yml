@@ -2,11 +2,31 @@ uuid: 25b01452-1ddb-4d98-b10f-d3e1b248478e
 langcode: en
 status: true
 dependencies:
+  config:
+    - feeds.feed_type.waste_treatment
+    - node.type.waste_treatment
+    - node.type.waste_treatment_lagoon
   module:
+    - csv_importer
+    - feeds
+    - field_permissions
     - file
+    - node
 id: nrcs_awardee
 label: 'NRCS Awardee'
 weight: 7
 is_admin: null
 permissions:
+  - 'access csv importer'
   - 'access files overview'
+  - 'create field_name'
+  - 'create waste_treatment content'
+  - 'create waste_treatment feeds'
+  - 'create waste_treatment_lagoon content'
+  - 'edit own field_name'
+  - 'import waste_treatment feeds'
+  - 'update own waste_treatment feeds'
+  - 'view own field_name'
+  - 'view own waste_treatment feeds'
+  - 'view waste_treatment revisions'
+  - 'view waste_treatment_lagoon revisions'

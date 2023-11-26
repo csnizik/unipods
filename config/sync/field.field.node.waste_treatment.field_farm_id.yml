@@ -1,0 +1,19 @@
+uuid: b01e8aa6-28a9-43c2-9b2c-f56dd9bc0a7f
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_farm_id
+    - node.type.waste_treatment
+id: node.waste_treatment.field_farm_id
+field_name: field_farm_id
+entity_type: node
+bundle: waste_treatment
+label: 'Farm ID'
+description: ''
+required: true
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

@@ -1,0 +1,19 @@
+uuid: 482531e8-cd59-47fb-a021-9764bfda5003
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_treatment_type
+    - node.type.waste_treatment
+id: node.waste_treatment.field_treatment_type
+field_name: field_treatment_type
+entity_type: node
+bundle: waste_treatment
+label: 'Treatment Type'
+description: ''
+required: true
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

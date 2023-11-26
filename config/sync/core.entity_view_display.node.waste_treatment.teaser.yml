@@ -1,0 +1,34 @@
+uuid: e4eac348-f1c9-4ed2-a0d8-b48e7aeefef0
+langcode: en
+status: true
+dependencies:
+  config:
+    - core.entity_view_mode.node.teaser
+    - field.field.node.waste_treatment.feeds_item
+    - field.field.node.waste_treatment.field_county
+    - field.field.node.waste_treatment.field_farm_id
+    - field.field.node.waste_treatment.field_field_id
+    - field.field.node.waste_treatment.field_state_territory
+    - field.field.node.waste_treatment.field_tract_id
+    - field.field.node.waste_treatment.field_treatment_type
+    - node.type.waste_treatment
+  module:
+    - user
+id: node.waste_treatment.teaser
+targetEntityType: node
+bundle: waste_treatment
+mode: teaser
+content:
+  links:
+    settings: {  }
+    third_party_settings: {  }
+    weight: 100
+    region: content
+hidden:
+  feeds_item: true
+  field_county: true
+  field_farm_id: true
+  field_field_id: true
+  field_state_territory: true
+  field_tract_id: true
+  field_treatment_type: true

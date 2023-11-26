@@ -1,0 +1,123 @@
+uuid: 1dcc7f71-d60c-4d8e-b270-4f3b93693eec
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.node.waste_treatment.field_county
+    - field.field.node.waste_treatment.field_farm_id
+    - field.field.node.waste_treatment.field_field_id
+    - field.field.node.waste_treatment.field_state_territory
+    - field.field.node.waste_treatment.field_tract_id
+    - field.field.node.waste_treatment.field_treatment_type
+    - node.type.waste_treatment
+  module:
+    - node
+label: 'Waste Treatment'
+id: waste_treatment
+description: ''
+help: ''
+import_period: 3600
+fetcher: upload
+fetcher_configuration:
+  allowed_extensions: csv
+  directory: 'private://imports/waste-treatment'
+parser: csv
+parser_configuration:
+  delimiter: ','
+  no_headers: false
+  line_limit: 100
+processor: 'entity:node'
+processor_configuration:
+  values:
+    type: waste_treatment
+  langcode: en
+  insert_new: 1
+  update_existing: 2
+  update_non_existent: _keep
+  skip_hash_check: false
+  authorize: true
+  revision: false
+  expire: -1
+  owner_feed_author: false
+  owner_id: 0
+custom_sources:
+  field_farm_id:
+    value: field_farm_id
+    label: field_farm_id
+    machine_name: field_farm_id
+    type: csv
+  field_tract_id:
+    value: field_tract_id
+    label: field_tract_id
+    machine_name: field_tract_id
+    type: csv
+  field_field_id:
+    value: field_field_id
+    label: field_field_id
+    machine_name: field_field_id
+    type: csv
+  field_state_territory:
+    value: field_state_territory
+    label: field_state_territory
+    machine_name: field_state_territory
+    type: csv
+  field_county:
+    value: field_county
+    label: field_county
+    machine_name: field_county
+    type: csv
+  field_treatment_type:
+    value: field_treatment_type
+    label: field_treatment_type
+    machine_name: field_treatment_type
+    type: csv
+mappings:
+  -
+    target: title
+    map:
+      value: 'parent:title'
+    settings:
+      language: null
+    unique:
+      value: 1
+  -
+    target: field_farm_id
+    map:
+      value: field_farm_id
+    settings:
+      language: null
+    unique: {  }
+  -
+    target: field_tract_id
+    map:
+      value: field_tract_id
+    settings:
+      language: null
+    unique: {  }
+  -
+    target: field_field_id
+    map:
+      value: field_field_id
+    settings:
+      language: null
+    unique: {  }
+  -
+    target: field_state_territory
+    map:
+      value: field_state_territory
+    settings:
+      language: null
+  -
+    target: field_county
+    map:
+      value: field_county
+    settings:
+      language: null
+    unique: {  }
+  -
+    target: field_treatment_type
+    map:
+      value: field_treatment_type
+    settings:
+      language: null
+    unique: {  }

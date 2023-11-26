@@ -16,7 +16,7 @@ id: node.contact.field_admin_user
 field_name: field_admin_user
 entity_type: node
 bundle: contact
-label: Admin
+label: 'Admin Override'
 description: ''
 required: false
 translatable: false
