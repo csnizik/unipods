@@ -1,0 +1,38 @@
+uuid: b357a9b6-ea93-484e-ae93-77f88f5bd5f0
+langcode: en
+status: true
+dependencies: {  }
+id: user_login
+label: 'User login'
+events:
+  -
+    event_name: rules_user_login
+description: ''
+tags: {  }
+config_version: '3'
+expression:
+  id: rules_rule
+  uuid: 60a11307-16dd-49f5-85cf-b62ac64bc28f
+  weight: 0
+  conditions:
+    id: rules_and
+    uuid: 5e5d5f47-d9a9-45ec-979a-badb4a6a2c49
+    weight: 0
+    conditions: {  }
+  actions:
+    id: rules_action_set
+    uuid: 9dcfbed0-dafc-4823-9564-4baf0f0adec9
+    weight: 0
+    actions:
+      -
+        id: rules_action
+        uuid: d944478c-5b54-42ee-abed-e02a4360c7e4
+        weight: 0
+        action_id: rules_page_redirect
+        context_values:
+          url: /dashboard
+        context_mapping: {  }
+        context_processors:
+          url:
+            rules_tokens: {  }
+        provides_mapping: {  }
