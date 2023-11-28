@@ -1,0 +1,36 @@
+environment_variables:
+  project_url: git@github.com:csnizik/unipods
+  branch: main
+  checkout_dir: ~/tmp/ddev-pull-git-test-repo
+  rsync_dest: /path/to/destination # Update this with your actual destination path
+
+auth_command:
+  service: host
+  command: |
+    set -eu -o pipefail
+    if [ ! -d ${checkout_dir}/.git ] ; then
+        git clone -q ${project_url} --branch=${branch} ${checkout_dir}
+    else
+        cd ${checkout_dir}
+        git reset --hard -q && git fetch && git checkout -q origin/${branch}
+    fi
+
+update_codebase_command:
+  service: host
+  command: |
+    set -eu -o pipefail
+    cd ${checkout_dir}
+    git pull origin ${branch}
+
+# Updated: Using rsync for file synchronization
+sync_files_command:
+  service: host
+  command: |
+    set -eu -o pipefail
+    rsync -avz --delete ${checkout_dir}/ ${rsync_dest}
+
+db_import_command:
+  service: host
+  command: |
+    set -eu -o pipefail
+    ddev import-db --src="${checkout_dir}/db.sql.gz"
