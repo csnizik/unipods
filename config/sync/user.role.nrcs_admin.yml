@@ -10,11 +10,15 @@ dependencies:
     - create_user_permission
     - field_permissions
     - node
+    - system
 id: nrcs_admin
 label: 'NRCS Administrator'
 weight: 6
 is_admin: null
 permissions:
+  - 'access content'
+  - 'access content overview'
+  - 'access user profiles'
   - 'create award content'
   - 'create awardee_org content'
   - 'create contact content'
@@ -23,13 +27,12 @@ permissions:
   - 'delete own award content'
   - 'delete own awardee_org content'
   - 'delete own contact content'
-  - 'edit any award content'
-  - 'edit any awardee_org content'
-  - 'edit any contact content'
   - 'edit own award content'
   - 'edit own awardee_org content'
   - 'edit own contact content'
   - 'edit own field_name'
   - 'view field_admin_user'
+  - 'view field_awardee_user'
+  - 'view field_invite_email'
   - 'view field_name'
   - 'view own field_name'

@@ -7054,7 +7054,7 @@ button.fsa-badge:hover:not([disabled]),button.fsa-badge:focus,button.fsa-badge:a
 .fsa-header-app__profile {
     line-height: 1;
     display: -ms-flexbox;
-    display: flex
+    display: flex;
 }
 
 .fsa-header-app__profile-item {
@@ -16920,6 +16920,28 @@ span.fsa-spinbox {
 .fsa-bg--primary-900 {
     background-color: #1a4b24 !important
 }
+
+
+.site-sh .fsa-bg--primary {
+    background-color: #205493 !important
+}
+
+.site-sh .fsa-bg--primary-300 {
+    background-color: #4f78aa !important
+}
+
+.site-sh .fsa-bg--primary-200 {
+    background-color: #bcccdf !important
+}
+
+.site-sh .fsa-bg--primary-100 {
+    background-color: #dee5ef !important
+}
+
+.site-sh .fsa-bg--primary-900 {
+    background-color: #183f6e !important
+}
+
 
 .fsa-bg--secondary {
     background-color: #205493 !important

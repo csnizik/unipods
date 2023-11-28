@@ -5,6 +5,8 @@
  * Functions to support theming.
  */
 
+use Drupal\user\UserInterface;
+
 /**
  * Implements hook_preprocess_image_widget().
  */
@@ -43,9 +45,57 @@ function fpac_theme_preprocess_input(&$variables) {
 }
 
 /**
+ * Implements hook_preprocess_HOOK() for the base HTML Twig file.
+ */
+function fpac_theme_preprocess_html(&$variables) {
+  $user = \Drupal::currentUser();
+  if ($user instanceof UserInterface && $user->isAuthenticated()) {
+    if ($user->hasField('user_roles') && !empty($user->get('user_roles')->getValue())) {
+      $user_roles = array_column($user->get('user_roles')->getValue(), 'value');
+      if (in_array('sh', $user_roles)) {
+        $variables['site_name'] = 'sh';
+      }
+      elseif (in_array('csc', $user_roles)) {
+        $variables['site_name'] = 'csc';
+      }
+      else {
+        $variables['site_name'] = '';
+      }
+    }
+  }
+}
+
+/**
+ * Implements hook_preprocess_HOOK() for the header block.
+ */
+function fpac_theme_preprocess_block(&$variables) {
+  if ($variables['plugin_id'] == 'block_content:fe4b2fe3-b6bc-4143-bbfc-1afe58a4c934') {
+    // Set the app name variable based on your logic.
+    $user = \Drupal::currentUser();
+    $variables['app_name'] = NULL;
+    if ($user->isAuthenticated()) {
+      $variables['logged_in'] = TRUE;
+      $variables['user_name'] = $user->getDisplayName();
+      $variables['user_url'] = '/user/' . $user->id();
+      $variables['user_roles'] = $user->getRoles();
+      if (in_array('csc', $variables['user_roles'])) {
+        $variables['app_name'] = 'Climate Smart Commodities';
+      }
+      else {
+        $variables['app_name'] = 'Soil Health';
+      }
+    }
+    else {
+      $variables['logged_in'] = FALSE;
+      $variables['login_url'] = '/user/login';
+    }
+  }
+}
+
+/**
  * Implements hook_theme_suggestions_HOOK_alter() for form.
  */
-// function fpac_theme_theme_suggestions_form_alter(array &$suggestions, array $variables) {
+// Function fpac_theme_theme_suggestions_form_alter(array &$suggestions, array $variables) {
 //   $form_id = $variables['element']['#id'];
 //   if ($form_id == 'node-awardee-org-form') {
 //     $suggestions[] = 'form__node_awardee_org';
@@ -56,5 +106,4 @@ function fpac_theme_preprocess_input(&$variables) {
 //   elseif ($form_id == 'node-project-form') {
 //     $suggestions[] = 'form__node_project';
 //   }
-// }
-
+// }.

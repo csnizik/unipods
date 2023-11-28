@@ -1,0 +1,25 @@
+uuid: ba23051a-d451-45cd-9b89-54e4a5322123
+langcode: en
+status: true
+dependencies:
+  content:
+    - 'block_content:ui_component:fe4b2fe3-b6bc-4143-bbfc-1afe58a4c934'
+  module:
+    - block_content
+  theme:
+    - fpac_theme
+id: fpac_theme_nrcsheader
+theme: fpac_theme
+region: header
+weight: 0
+provider: null
+plugin: 'block_content:fe4b2fe3-b6bc-4143-bbfc-1afe58a4c934'
+settings:
+  id: 'block_content:fe4b2fe3-b6bc-4143-bbfc-1afe58a4c934'
+  label: 'NRCS Header'
+  label_display: '0'
+  provider: block_content
+  status: true
+  info: ''
+  view_mode: full
+visibility: {  }
