@@ -2,8 +2,9 @@ _core:
   default_config_hash: FJ7FfwlYzcbFfG0AqVPlqsLJIRhkzS1Rv6eO1vssSkM
 enabled: false
 settings:
-  client_id: null
-  client_secret: null
-  authorization_endpoint: 'https://example.com/oauth2/authorize'
-  token_endpoint: 'https://example.com/oauth2/token'
-  userinfo_endpoint: 'https://example.com/oauth2/UserInfo'
+  redirect_url: ''
+  client_id: aafea36e-bb1a-4381-8c29-26da34c05d66
+  client_secret: BA1lIvup7iV3PbNKmMpmUWFqRz049URXnKAfOYSU
+  authorization_endpoint: 'https://gateway.cert.eauth.usda.gov/affwebservices/CASSO/oidc/USDA_NRCS_PODS_DEV_v0/authorize'
+  token_endpoint: 'https://gateway.cert.eauth.usda.gov/affwebservices/CASSO/oidc/USDA_NRCS_PODS_DEV_v0/token'
+  userinfo_endpoint: 'https://gateway.cert.eauth.usda.gov/affwebservices/CASSO/oidc/USDA_NRCS_PODS_DEV_v0/userinfo'

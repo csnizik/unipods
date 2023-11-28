@@ -1,0 +1,13 @@
+<?php
+
+/**
+ * @file Remove configuration from OpenID Connect settings.
+ */
+
+ /**
+  * Implements hook_uninstall()
+  */
+  function openid_connect_eauth_uninstall() {
+   // Remove configuration
+   \Drupal::configFactory()->getEditable('openid_connect.settings.eauth')->delete();
+  }

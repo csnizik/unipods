@@ -4,6 +4,7 @@ status: true
 dependencies:
   config:
     - block_content.type.html_block
+    - field.field.block_content.html_block.field_html
     - field.field.block_content.html_block.field_raw_html
     - field.field.block_content.html_block.layout_builder__layout
   module:
@@ -39,12 +40,36 @@ third_party_settings:
                 third_party_settings: {  }
             weight: 1
             additional: {  }
+          aef07251-1af0-4d41-af11-9c2bcdf3f036:
+            uuid: aef07251-1af0-4d41-af11-9c2bcdf3f036
+            region: content
+            configuration:
+              id: 'field_block:block_content:html_block:field_html'
+              label_display: '0'
+              context_mapping:
+                entity: layout_builder.entity
+              formatter:
+                type: string
+                label: above
+                settings:
+                  link_to_entity: false
+                third_party_settings: {  }
+            weight: 2
+            additional: {  }
         third_party_settings: {  }
 id: block_content.html_block.default
 targetEntityType: block_content
 bundle: html_block
 mode: default
 content:
+  field_html:
+    type: string
+    label: above
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    weight: 2
+    region: content
   field_raw_html:
     type: text_default
     label: above

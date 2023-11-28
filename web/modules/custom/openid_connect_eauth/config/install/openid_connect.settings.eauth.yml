@@ -1,0 +1,8 @@
+enabled: false
+settings:
+  client_id: 'ADD ID'
+  client_secret: 'ADD SECRET'
+  authorization_endpoint: 'https://example.com/eauth/authorize'
+  token_endpoint: 'https://example.com/eauth/token'
+  userinfo_endpoint: 'https://example.com/eauth/UserInfo'
+  redirect_url: '/new-redirect'
