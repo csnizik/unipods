@@ -6,7 +6,6 @@ dependencies:
     - 'block_content:html_block:5a943bd6-b9a8-4232-82d2-143300ed6f4c'
   module:
     - block_content
-    - user
   theme:
     - fpac_theme
 id: fpac_theme_tophatsh
@@ -17,18 +16,10 @@ provider: null
 plugin: 'block_content:5a943bd6-b9a8-4232-82d2-143300ed6f4c'
 settings:
   id: 'block_content:5a943bd6-b9a8-4232-82d2-143300ed6f4c'
-  label: 'Tophat - SH'
+  label: Tophat
   label_display: '0'
   provider: block_content
   status: true
   info: ''
   view_mode: full
-visibility:
-  user_role:
-    id: user_role
-    negate: false
-    context_mapping:
-      user: '@user.current_user_context:current_user'
-    roles:
-      anonymous: anonymous
-      sh: sh
+visibility: {  }
