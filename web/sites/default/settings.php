@@ -94,9 +94,9 @@ $port = 3306;
 $driver = "mysql";
 
 $databases['default']['default'] = array(
-  'database' => "db",
-  'username' => "db",
-  'password' => "db",
+  'database' => "drupalstage",
+  'username' => "drupalstage",
+  'password' => "drupalstage",
   'host' => $host,
   'driver' => $driver,
   'port' => $port,
