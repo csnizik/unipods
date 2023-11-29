@@ -37,3 +37,7 @@ vendor/
 
 # Ignore Node.js dependency folder
 node_modules/
+
+# Allow site files tarball and db dump
+!files.tar
+!db.sql.gz
