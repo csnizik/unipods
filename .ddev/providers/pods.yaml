@@ -2,7 +2,7 @@ environment_variables:
   project_url: git@github.com:csnizik/unipods
   branch: main
   checkout_dir: ~/tmp/ddev-pull-git-test-repo
-  rsync_dest: /path/to/destination # Update this with your actual destination path
+  rsync_dest: /path/to/destination
 
 auth_command:
   service: host
