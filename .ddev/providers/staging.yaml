@@ -1,0 +1,45 @@
+#ddev-generated
+# Example git provider configuration.
+
+# To use this configuration,
+
+# 1. Create a git repository that contains a database dump (db.sql.gz) and a files tarball. It can be private or public, but for most people they will be private.
+# 2. Configure access to the repository so that it can be accessed from where you need it. For example, on gitpod, you'll need to enable access to GitHub or Gitlab. On a regular local dev environment, you'll need to be able to access github via https or ssh.
+# 3. Update the environment_variables below to point to the git repository that contains your database dump and files.
+
+environment_variables:
+  project_url: git@github.com:csnizik/unipods
+  branch: main
+  checkout_dir: ~/tmp/ddev-pull-git-test-repo-stg
+  rsync_dest: /home/pablohoney/projects/unipods/staging
+
+auth_command:
+  service: host
+  command: |
+    set -eu -o pipefail
+    if [ ! -d ${checkout_dir}/.git ] ; then
+        git clone -q ${project_url} --branch=${branch} ${checkout_dir}
+    else
+        cd ${checkout_dir}
+        git reset --hard -q && git fetch && git checkout -q origin/${branch}
+    fi
+
+update_codebase_command:
+  service: host
+  command: |
+    set -eu -o pipefail
+    cd ${checkout_dir}
+    git pull origin ${branch}
+
+# Changed from recipe: using rsync for file synchronization
+sync_files_command:
+  service: host
+  command: |
+    set -eu -o pipefail
+    rsync -avz --delete ${checkout_dir}/ ${rsync_dest}
+
+db_import_command:
+  service: host
+  command: |
+    set -eu -o pipefail
+    ddev import-db --src="${checkout_dir}/db.sql.gz"
