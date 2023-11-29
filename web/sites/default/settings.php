@@ -89,7 +89,7 @@
  * @endcode
  */
 
-$host = "db";
+$host = "localhost";
 $port = 3306;
 $driver = "mysql";
 
