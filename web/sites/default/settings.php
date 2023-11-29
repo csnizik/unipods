@@ -88,7 +88,20 @@
  * ];
  * @endcode
  */
-$databases = [];
+
+$host = "db";
+$port = 3306;
+$driver = "mysql";
+
+$databases['default']['default'] = array(
+  'database' => "db",
+  'username' => "db",
+  'password' => "db",
+  'host' => $host,
+  'driver' => $driver,
+  'port' => $port,
+  'prefix' => "",
+);
 
 /**
  * Customizing database settings.
