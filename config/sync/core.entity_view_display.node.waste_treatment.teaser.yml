@@ -5,6 +5,7 @@ dependencies:
   config:
     - core.entity_view_mode.node.teaser
     - field.field.node.waste_treatment.feeds_item
+    - field.field.node.waste_treatment.field_associated_project
     - field.field.node.waste_treatment.field_county
     - field.field.node.waste_treatment.field_farm_id
     - field.field.node.waste_treatment.field_field_id
@@ -26,6 +27,7 @@ content:
     region: content
 hidden:
   feeds_item: true
+  field_associated_project: true
   field_county: true
   field_farm_id: true
   field_field_id: true

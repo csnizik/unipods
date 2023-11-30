@@ -1,0 +1,36 @@
+uuid: b6cf8f61-a42e-404d-92f0-1710a92b161a
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_associated_project
+    - node.type.project
+    - node.type.waste_treatment
+  module:
+    - entity_reference_validators
+third_party_settings:
+  entity_reference_validators:
+    circular_reference: false
+    circular_reference_deep: false
+    duplicate_reference: false
+id: node.waste_treatment.field_associated_project
+field_name: field_associated_project
+entity_type: node
+bundle: waste_treatment
+label: Project
+description: ''
+required: true
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:node'
+  handler_settings:
+    target_bundles:
+      project: project
+    sort:
+      field: _none
+      direction: ASC
+    auto_create: false
+    auto_create_bundle: ''
+field_type: entity_reference

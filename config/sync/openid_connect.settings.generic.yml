@@ -1,6 +1,6 @@
 _core:
   default_config_hash: FJ7FfwlYzcbFfG0AqVPlqsLJIRhkzS1Rv6eO1vssSkM
-enabled: true
+enabled: false
 settings:
   redirect_url: ''
   client_id: aafea36e-bb1a-4381-8c29-26da34c05d66

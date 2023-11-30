@@ -6,6 +6,7 @@ dependencies:
     - node.type.award
     - node.type.awardee_org
     - node.type.contact
+    - node.type.project
   module:
     - create_user_permission
     - field_permissions
@@ -23,14 +24,17 @@ permissions:
   - 'create awardee_org content'
   - 'create contact content'
   - 'create field_name'
+  - 'create project content'
   - 'create users'
   - 'delete own award content'
   - 'delete own awardee_org content'
   - 'delete own contact content'
+  - 'delete own project content'
   - 'edit own award content'
   - 'edit own awardee_org content'
   - 'edit own contact content'
   - 'edit own field_name'
+  - 'edit own project content'
   - 'view field_admin_user'
   - 'view field_awardee_user'
   - 'view field_invite_email'
