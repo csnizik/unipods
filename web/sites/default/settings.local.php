@@ -157,4 +157,4 @@ $settings['skip_permissions_hardening'] = TRUE;
 
 $settings['config_sync_directory'] = '../config/sync';
 
-$settings['trusted_host_patterns'] = '';
+// $settings['trusted_host_patterns'] = '';
