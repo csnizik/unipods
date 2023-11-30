@@ -1,0 +1,33 @@
+uuid: 02b1e72d-29af-435c-9ac3-a759fb896041
+langcode: en
+status: true
+dependencies:
+  content:
+    - 'block_content:ui_component:5ab2ef92-c53f-4176-b4e3-42c2c627a018'
+  module:
+    - block_content
+    - user
+  theme:
+    - fpac_theme
+id: fpac_theme_headerblocknobranding
+theme: fpac_theme
+region: header
+weight: 0
+provider: null
+plugin: 'block_content:5ab2ef92-c53f-4176-b4e3-42c2c627a018'
+settings:
+  id: 'block_content:5ab2ef92-c53f-4176-b4e3-42c2c627a018'
+  label: 'Header Block - no branding'
+  label_display: '0'
+  provider: block_content
+  status: true
+  info: ''
+  view_mode: full
+visibility:
+  user_role:
+    id: user_role
+    negate: false
+    context_mapping:
+      user: '@user.current_user_context:current_user'
+    roles:
+      anonymous: anonymous
