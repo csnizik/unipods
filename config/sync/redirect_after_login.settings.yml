@@ -1,0 +1,11 @@
+login_redirection:
+  anonymous: null
+  authenticated: /
+  content_editor: /
+  administrator: /admin
+  sh: /dashboard
+  csc: /dashboard
+  nrcs_admin: /dashboard
+  nrcs_awardee: /dashboard
+  nrcs_anal: /dashboard
+exclude_urls: ''

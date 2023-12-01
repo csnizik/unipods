@@ -457,7 +457,7 @@ display:
           entity_field: created
           plugin_id: field
           label: Invited
-          exclude: false
+          exclude: true
           alter:
             alter_text: false
             text: ''

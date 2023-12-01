@@ -73,6 +73,7 @@ module:
   path_alias: 0
   pods_helpers: 0
   redirect: 0
+  redirect_after_login: 0
   role_delegation: 0
   rules: 0
   rules_token: 0

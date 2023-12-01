@@ -4,8 +4,7 @@ status: true
 dependencies:
   config:
     - core.entity_view_mode.node.teaser
-    - field.field.node.award.field_awardee_org
-    - field.field.node.award.field_contact
+    - field.field.node.award.field_project
     - node.type.award
   module:
     - user
@@ -20,5 +19,4 @@ content:
     weight: 100
     region: content
 hidden:
-  field_awardee_org: true
-  field_contact: true
+  field_project: true

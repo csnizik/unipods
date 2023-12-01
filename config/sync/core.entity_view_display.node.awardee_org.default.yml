@@ -4,6 +4,7 @@ status: true
 dependencies:
   config:
     - field.field.node.awardee_org.field_acronym
+    - field.field.node.awardee_org.field_awardee_award
     - field.field.node.awardee_org.field_invited_contact
     - field.field.node.awardee_org.field_short_name
     - field.field.node.awardee_org.field_state_territory
@@ -23,6 +24,14 @@ content:
       link_to_entity: false
     third_party_settings: {  }
     weight: 101
+    region: content
+  field_awardee_award:
+    type: entity_reference_label
+    label: above
+    settings:
+      link: true
+    third_party_settings: {  }
+    weight: 105
     region: content
   field_invited_contact:
     type: entity_reference_label
