@@ -1,0 +1,23 @@
+uuid: 1bca3601-6960-4ee3-a248-07c74d03578c
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_access_rule
+    - node.type.awardee_org
+  module:
+    - options
+id: node.awardee_org.field_access_rule
+field_name: field_access_rule
+entity_type: node
+bundle: awardee_org
+label: Visibility
+description: ''
+required: false
+translatable: false
+default_value:
+  -
+    value: visible_owner
+default_value_callback: ''
+settings: {  }
+field_type: list_string

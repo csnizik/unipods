@@ -6,6 +6,9 @@
 
 use Drupal\user\UserInterface;
 use Drupal\user\Entity\User;
+use Drupal\node\NodeInterface;
+use Drupal\Core\Session\AccountInterface;
+use Drupal\Core\Access\AccessResult;
 
 /**
  * Implements hook_user_login.
@@ -22,16 +25,16 @@ function pods_helpers_user_login(UserInterface $account) {
   $userEmail = $account->getEmail();
   // @todo handle missing values on received token
   // if (check for missing eauthID and any other values from token) {
-    //   logout user and log message;
-    // }
-    // $user->set('field_eauth_id', 'TESTING')->save();
-    // and set other values on user entity.
-    $contacts = \Drupal::entityTypeManager()->getStorage('node')->loadByProperties(['type' => 'contact', 'title' => $userEmail]);
-    if (empty($contacts)) {
-      Drupal::logger('pods_helpers')->info('user not found: %user', ['%user' => $userEmail]);
-      return;
-      // @todo add a forced logout here
-    }
+  //   logout user and log message;
+  // }
+  // $user->set('field_eauth_id', 'TESTING')->save();
+  // and set other values on user entity.
+  $contacts = \Drupal::entityTypeManager()->getStorage('node')->loadByProperties(['type' => 'contact', 'title' => $userEmail]);
+  if (empty($contacts)) {
+    Drupal::logger('pods_helpers')->info('user not found: %user', ['%user' => $userEmail]);
+    return;
+    // @todo add a forced logout here
+  }
   elseif (count($contacts) > 1) {
     Drupal::logger('pods_helpers')->info('more than one contact found');
     return;
@@ -96,3 +99,38 @@ function pods_helpers_user_login(UserInterface $account) {
 //   ];
 // }
 // }.
+
+/**
+ * Implements hook_node_access().
+ */
+function pods_helpers_node_access(NodeInterface $node, $op, AccountInterface $account) {
+  // Check if the operation is 'view'.
+  if ($op === 'view' && $node->isPublished()) {
+    $access_rule = $node->get('field_access_rule')->value;
+
+    switch ($access_rule) {
+      case 'visible_all':
+        // Allow access to all users.
+        return AccessResult::allowed();
+
+      case 'visible_owner':
+        // Check if the user is the node author.
+        if ($node->getOwnerId() === $account->id()) {
+          return AccessResult::allowed();
+        }
+        return AccessResult::forbidden();
+
+      case 'visible_group':
+        // Future implementation for group access.
+        // Placeholder - currently behaves like 'visible_all'.
+        return AccessResult::allowed();
+
+      default:
+        // Default behavior if field is not set or has an unrecognized value.
+        return AccessResult::neutral();
+    }
+  }
+
+  // No opinion for other operations, so return neutral.
+  return AccessResult::neutral();
+}

@@ -3,15 +3,24 @@ langcode: en
 status: true
 dependencies:
   config:
+    - field.field.node.award.field_access_rule
     - field.field.node.award.field_project
     - node.type.award
   module:
+    - options
     - user
 id: node.award.default
 targetEntityType: node
 bundle: award
 mode: default
 content:
+  field_access_rule:
+    type: list_default
+    label: above
+    settings: {  }
+    third_party_settings: {  }
+    weight: 111
+    region: content
   field_project:
     type: entity_reference_label
     label: above

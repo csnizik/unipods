@@ -4,6 +4,7 @@ status: true
 dependencies:
   config:
     - field.field.node.waste_treatment.feeds_item
+    - field.field.node.waste_treatment.field_access_rule
     - field.field.node.waste_treatment.field_associated_project
     - field.field.node.waste_treatment.field_county
     - field.field.node.waste_treatment.field_farm_id
@@ -22,6 +23,12 @@ content:
   created:
     type: datetime_timestamp
     weight: 10
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+  field_access_rule:
+    type: options_select
+    weight: 121
     region: content
     settings: {  }
     third_party_settings: {  }

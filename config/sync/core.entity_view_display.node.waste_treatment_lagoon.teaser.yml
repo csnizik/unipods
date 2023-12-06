@@ -5,6 +5,7 @@ dependencies:
   config:
     - core.entity_view_mode.node.teaser
     - field.field.node.waste_treatment_lagoon.feeds_item
+    - field.field.node.waste_treatment_lagoon.field_access_rule
     - field.field.node.waste_treatment_lagoon.field_county
     - field.field.node.waste_treatment_lagoon.field_farm_id
     - field.field.node.waste_treatment_lagoon.field_field_id
@@ -28,6 +29,7 @@ content:
     region: content
 hidden:
   feeds_item: true
+  field_access_rule: true
   field_county: true
   field_farm_id: true
   field_field_id: true

@@ -4,6 +4,7 @@ status: true
 dependencies:
   config:
     - core.entity_view_mode.node.teaser
+    - field.field.node.contact.field_access_rule
     - field.field.node.contact.field_active
     - field.field.node.contact.field_admin_user
     - field.field.node.contact.field_awardee_user
@@ -24,6 +25,7 @@ content:
     weight: 100
     region: content
 hidden:
+  field_access_rule: true
   field_active: true
   field_admin_user: true
   field_awardee_user: true

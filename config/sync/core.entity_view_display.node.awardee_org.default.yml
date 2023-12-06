@@ -3,6 +3,7 @@ langcode: en
 status: true
 dependencies:
   config:
+    - field.field.node.awardee_org.field_access_rule
     - field.field.node.awardee_org.field_acronym
     - field.field.node.awardee_org.field_awardee_award
     - field.field.node.awardee_org.field_invited_contact
@@ -17,6 +18,13 @@ targetEntityType: node
 bundle: awardee_org
 mode: default
 content:
+  field_access_rule:
+    type: list_default
+    label: above
+    settings: {  }
+    third_party_settings: {  }
+    weight: 111
+    region: content
   field_acronym:
     type: string
     label: above

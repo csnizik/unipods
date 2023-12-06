@@ -4,6 +4,7 @@ status: true
 dependencies:
   config:
     - core.entity_view_mode.node.teaser
+    - field.field.node.awardee_org.field_access_rule
     - field.field.node.awardee_org.field_acronym
     - field.field.node.awardee_org.field_awardee_award
     - field.field.node.awardee_org.field_invited_contact
@@ -23,6 +24,7 @@ content:
     weight: 100
     region: content
 hidden:
+  field_access_rule: true
   field_acronym: true
   field_awardee_award: true
   field_invited_contact: true

@@ -1,0 +1,23 @@
+uuid: cf9ce326-2601-455a-9cd5-6c8119781f0a
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_access_rule
+    - node.type.waste_treatment_lagoon
+  module:
+    - options
+id: node.waste_treatment_lagoon.field_access_rule
+field_name: field_access_rule
+entity_type: node
+bundle: waste_treatment_lagoon
+label: Visibility
+description: ''
+required: false
+translatable: false
+default_value:
+  -
+    value: visible_owner
+default_value_callback: ''
+settings: {  }
+field_type: list_string

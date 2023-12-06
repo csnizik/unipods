@@ -3,6 +3,7 @@ langcode: en
 status: true
 dependencies:
   config:
+    - field.field.node.contact.field_access_rule
     - field.field.node.contact.field_active
     - field.field.node.contact.field_admin_user
     - field.field.node.contact.field_awardee_user
@@ -15,6 +16,12 @@ targetEntityType: node
 bundle: contact
 mode: default
 content:
+  field_access_rule:
+    type: options_select
+    weight: 121
+    region: content
+    settings: {  }
+    third_party_settings: {  }
   field_admin_user:
     type: options_select
     weight: 4

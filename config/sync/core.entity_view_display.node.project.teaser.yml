@@ -4,6 +4,7 @@ status: true
 dependencies:
   config:
     - core.entity_view_mode.node.teaser
+    - field.field.node.project.field_access_rule
     - field.field.node.project.field_award
     - field.field.node.project.field_funding_amount
     - field.field.node.project.field_grant_type
@@ -23,6 +24,7 @@ content:
     weight: 100
     region: content
 hidden:
+  field_access_rule: true
   field_award: true
   field_funding_amount: true
   field_grant_type: true

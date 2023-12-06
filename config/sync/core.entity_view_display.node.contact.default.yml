@@ -3,6 +3,7 @@ langcode: en
 status: true
 dependencies:
   config:
+    - field.field.node.contact.field_access_rule
     - field.field.node.contact.field_active
     - field.field.node.contact.field_admin_user
     - field.field.node.contact.field_awardee_user
@@ -18,6 +19,13 @@ targetEntityType: node
 bundle: contact
 mode: default
 content:
+  field_access_rule:
+    type: list_default
+    label: above
+    settings: {  }
+    third_party_settings: {  }
+    weight: 111
+    region: content
   field_active:
     type: boolean
     label: above

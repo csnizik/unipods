@@ -3,6 +3,7 @@ langcode: en
 status: true
 dependencies:
   config:
+    - field.field.node.project.field_access_rule
     - field.field.node.project.field_award
     - field.field.node.project.field_funding_amount
     - field.field.node.project.field_grant_type
@@ -17,6 +18,13 @@ targetEntityType: node
 bundle: project
 mode: default
 content:
+  field_access_rule:
+    type: list_default
+    label: above
+    settings: {  }
+    third_party_settings: {  }
+    weight: 111
+    region: content
   field_award:
     type: string
     label: above

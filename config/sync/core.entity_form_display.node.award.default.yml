@@ -3,6 +3,7 @@ langcode: en
 status: true
 dependencies:
   config:
+    - field.field.node.award.field_access_rule
     - field.field.node.award.field_project
     - node.type.award
   module:
@@ -12,6 +13,12 @@ targetEntityType: node
 bundle: award
 mode: default
 content:
+  field_access_rule:
+    type: options_select
+    weight: 121
+    region: content
+    settings: {  }
+    third_party_settings: {  }
   field_project:
     type: inline_entity_form_complex_table_view_mode
     weight: 2

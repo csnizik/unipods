@@ -1,0 +1,23 @@
+uuid: af3d25d5-a51e-4734-b7b3-dd6bcb4d3b4d
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_access_rule
+    - node.type.project
+  module:
+    - options
+id: node.project.field_access_rule
+field_name: field_access_rule
+entity_type: node
+bundle: project
+label: Visibility
+description: ''
+required: false
+translatable: false
+default_value:
+  -
+    value: visible_owner
+default_value_callback: ''
+settings: {  }
+field_type: list_string

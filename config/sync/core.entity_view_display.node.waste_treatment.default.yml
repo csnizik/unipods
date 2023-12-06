@@ -4,6 +4,7 @@ status: true
 dependencies:
   config:
     - field.field.node.waste_treatment.feeds_item
+    - field.field.node.waste_treatment.field_access_rule
     - field.field.node.waste_treatment.field_associated_project
     - field.field.node.waste_treatment.field_county
     - field.field.node.waste_treatment.field_farm_id
@@ -20,6 +21,13 @@ targetEntityType: node
 bundle: waste_treatment
 mode: default
 content:
+  field_access_rule:
+    type: list_default
+    label: above
+    settings: {  }
+    third_party_settings: {  }
+    weight: 111
+    region: content
   field_associated_project:
     type: entity_reference_label
     label: above
