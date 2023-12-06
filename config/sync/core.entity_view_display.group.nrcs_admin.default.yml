@@ -1,0 +1,23 @@
+uuid: 3e6e3b2d-396e-4e7c-bd8e-dd7962c0a2ba
+langcode: en
+status: true
+dependencies:
+  config:
+    - group.type.nrcs_admin
+id: group.nrcs_admin.default
+targetEntityType: group
+bundle: nrcs_admin
+mode: default
+content:
+  label:
+    type: string
+    label: hidden
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    weight: -5
+    region: content
+hidden:
+  changed: true
+  created: true
+  uid: true

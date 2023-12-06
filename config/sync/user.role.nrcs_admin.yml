@@ -36,7 +36,6 @@ permissions:
   - 'edit own field_name'
   - 'edit own project content'
   - 'view field_admin_user'
-  - 'view field_awardee_user'
   - 'view field_invite_email'
   - 'view field_name'
   - 'view own field_name'

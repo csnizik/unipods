@@ -9,6 +9,8 @@ use Drupal\user\Entity\User;
 use Drupal\node\NodeInterface;
 use Drupal\Core\Session\AccountInterface;
 use Drupal\Core\Access\AccessResult;
+use Drupal\group\Entity\Group;
+use Drupal\group\Entity\GroupRole;
 
 /**
  * Implements hook_user_login.
@@ -23,6 +25,7 @@ function pods_helpers_user_login(UserInterface $account) {
     return;
   }
   $userEmail = $account->getEmail();
+  // @todo convert this to handling eauth token/scopes
   // @todo handle missing values on received token
   // if (check for missing eauthID and any other values from token) {
   //   logout user and log message;
@@ -74,6 +77,31 @@ function pods_helpers_user_login(UserInterface $account) {
     ->addRole($assignedType)
     ->set('field_admin_user', $assignedAdmin)
     ->save();
+
+  // Create the Group entity.
+  $group = Group::create([
+    'type' => 'nrcs_admin',
+  // The creator of the group.
+    'uid' => $assignedAdmin,
+  ]);
+  $group->save();
+
+  // Name the group.
+  $groupName = 'Group ' . $contact->getOwnerId() . '-' . $userId;
+  $group->set('label', $groupName);
+  $group->save();
+
+  // Define group roles.
+  $awardeeGroupRole = GroupRole::load('nrcs_admin-role_awardee');
+  $adminGroupRole = GroupRole::load('nrcs_admin-admin_in');
+
+  // Add the admin as a member of the group with 'nrcs_admin-admin_in' role.
+  $adminUser = User::load($assignedAdmin);
+  $group->addMember($adminUser, ['group_roles' => [$adminGroupRole->id()]]);
+
+  // Add the newly logged-in user as a member of the group with 'nrcs_admin-role_awardee' role.
+  $group->addMember($user, ['group_roles' => [$awardeeGroupRole->id()]]);
+
 }
 
 // @todo configure importer to use either CSV Importer, Feeds, or Webform

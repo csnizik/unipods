@@ -1,0 +1,23 @@
+uuid: 27f14b07-e03f-492f-8225-b989684897e8
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_access_rule
+    - node.type.page
+  module:
+    - options
+id: node.page.field_access_rule
+field_name: field_access_rule
+entity_type: node
+bundle: page
+label: Visibility
+description: ''
+required: false
+translatable: false
+default_value:
+  -
+    value: visible_owner
+default_value_callback: ''
+settings: {  }
+field_type: list_string

@@ -1,0 +1,23 @@
+uuid: d6564c14-1b9a-43f2-98d6-0c7d639f4e4f
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.group_relationship.nrcs_admin-group_membership.group_roles
+    - group.relationship_type.nrcs_admin-group_membership
+id: group_relationship.nrcs_admin-group_membership.default
+targetEntityType: group_relationship
+bundle: nrcs_admin-group_membership
+mode: default
+content:
+  group_roles:
+    type: entity_reference_label
+    label: above
+    settings:
+      link: false
+    third_party_settings: {  }
+    weight: -4
+    region: content
+hidden:
+  entity_id: true
+  uid: true

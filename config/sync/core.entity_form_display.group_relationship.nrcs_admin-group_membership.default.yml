@@ -1,0 +1,38 @@
+uuid: 4eaf29ba-9b16-4967-b27d-710977fd420c
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.group_relationship.nrcs_admin-group_membership.group_roles
+    - group.relationship_type.nrcs_admin-group_membership
+  module:
+    - path
+id: group_relationship.nrcs_admin-group_membership.default
+targetEntityType: group_relationship
+bundle: nrcs_admin-group_membership
+mode: default
+content:
+  entity_id:
+    type: entity_reference_autocomplete
+    weight: 5
+    region: content
+    settings:
+      match_operator: CONTAINS
+      match_limit: 10
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+  group_roles:
+    type: options_buttons
+    weight: 31
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+  path:
+    type: path
+    weight: 30
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+hidden:
+  uid: true

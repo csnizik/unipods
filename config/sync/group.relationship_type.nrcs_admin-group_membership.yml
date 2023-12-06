@@ -1,0 +1,15 @@
+uuid: 3a5cb632-4063-47a3-bdc7-d9c8824f48d6
+langcode: en
+status: true
+dependencies:
+  config:
+    - group.type.nrcs_admin
+  module:
+    - user
+id: nrcs_admin-group_membership
+group_type: nrcs_admin
+content_plugin: group_membership
+plugin_config:
+  group_cardinality: 0
+  entity_cardinality: 1
+  use_creation_wizard: false

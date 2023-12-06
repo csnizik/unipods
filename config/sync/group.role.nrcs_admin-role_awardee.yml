@@ -1,0 +1,15 @@
+uuid: 4c042948-d980-4d60-a207-c82b0b1c3253
+langcode: en
+status: true
+dependencies:
+  config:
+    - group.type.nrcs_admin
+    - user.role.nrcs_awardee
+id: nrcs_admin-role_awardee
+label: 'NRCS Awardee'
+weight: 103
+admin: false
+scope: insider
+global_role: nrcs_awardee
+group_type: nrcs_admin
+permissions: {  }

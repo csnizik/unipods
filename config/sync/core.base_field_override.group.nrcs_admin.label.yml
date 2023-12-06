@@ -1,0 +1,18 @@
+uuid: 46945a68-11d1-4520-ac9c-c06479f4f3cd
+langcode: en
+status: true
+dependencies:
+  config:
+    - group.type.nrcs_admin
+id: group.nrcs_admin.label
+field_name: label
+entity_type: group
+bundle: nrcs_admin
+label: Title
+description: ''
+required: true
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string
