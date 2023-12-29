@@ -38,31 +38,6 @@ third_party_settings:
                 third_party_settings: {  }
             weight: 0
             additional: {  }
-          1a9a881e-0957-4cf2-aea4-efab7e32425f:
-            uuid: 1a9a881e-0957-4cf2-aea4-efab7e32425f
-            region: content
-            configuration:
-              id: 'extra_field_block:node:page:links'
-              label_display: '0'
-              context_mapping:
-                entity: layout_builder.entity
-            weight: 1
-            additional: {  }
-          55f49a6b-7f71-40b5-933b-14545d8c9352:
-            uuid: 55f49a6b-7f71-40b5-933b-14545d8c9352
-            region: content
-            configuration:
-              id: 'field_block:node:page:field_access_rule'
-              label_display: '0'
-              context_mapping:
-                entity: layout_builder.entity
-              formatter:
-                type: list_default
-                label: above
-                settings: {  }
-                third_party_settings: {  }
-            weight: 2
-            additional: {  }
         third_party_settings: {  }
 _core:
   default_config_hash: M_Y8L5tfmhx7DR143E05YyZSpvgil6VFvqcfBWykalg
