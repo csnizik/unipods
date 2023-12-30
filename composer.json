@@ -55,7 +55,7 @@
     "drupal/webform": "^6.2",
     "drupal/webform_submission_import": "^2.1",
     "drupal/yearonly": "^9.1",
-    "drush/drush": "^12.4"
+    "drush/drush": "^12.4.3"
   },
   "conflict": {
     "drupal/drupal": "*"
