@@ -796,7 +796,6 @@ display:
           title: ''
           default_argument_type: current_user
           default_argument_options: {  }
-          default_argument_skip_url: false
           summary_options:
             base_path: ''
             count: true
@@ -925,7 +924,6 @@ display:
           title: ''
           default_argument_type: current_user
           default_argument_options: {  }
-          default_argument_skip_url: false
           summary_options:
             base_path: ''
             count: true
@@ -1379,7 +1377,6 @@ display:
           title: ''
           default_argument_type: current_user
           default_argument_options: {  }
-          default_argument_skip_url: false
           summary_options:
             base_path: ''
             count: true
@@ -1702,7 +1699,6 @@ display:
           title: ''
           default_argument_type: current_user
           default_argument_options: {  }
-          default_argument_skip_url: false
           summary_options:
             base_path: ''
             count: true

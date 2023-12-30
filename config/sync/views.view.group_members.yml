@@ -2,6 +2,8 @@ uuid: e5b63de5-8274-4d7d-9a61-8256bd0527b0
 langcode: en
 status: true
 dependencies:
+  config:
+    - field.storage.group_relationship.group_roles
   module:
     - group
     - user
@@ -588,7 +590,6 @@ display:
           default_argument_type: fixed
           default_argument_options:
             argument: ''
-          default_argument_skip_url: false
           summary_options:
             base_path: ''
             count: true
